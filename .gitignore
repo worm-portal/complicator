@@ -12,7 +12,8 @@
 !README.md
 !CITATION.cff
 !LICENSE.txt
-!setup.py
+!pyproject.toml
+!MANIFEST.in
 !.gitignore
 
 # Ignore pycache
