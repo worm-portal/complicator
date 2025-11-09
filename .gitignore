@@ -92,6 +92,15 @@ Thumbs.db
 # Development notebooks and test files
 *.ipynb
 *.csv
+*.xlsx
+*.xls
+
+# Documentation files (except README.md)
+*.md
+!README.md
+
+# Data files
+DEW_Data0
 
 # Temporary files
 *.tmp
