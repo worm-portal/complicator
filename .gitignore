@@ -2,13 +2,13 @@
 *
 
 # Include only these folders:
-!Complicator/
-!Complicator/*
-!Complicator/*/
+!complicator/
+!complicator/*
+!complicator/*/
 !html/
-!html/Complicator/
-!html/Complicator/*
-!html/Complicator/*/
+!html/complicator/
+!html/complicator/*
+!html/complicator/*/
 !README.md
 !CITATION.cff
 !LICENSE.txt
