@@ -89,11 +89,11 @@ Thumbs.db
 .tox/
 *.whl
 
-# Development notebooks and test files
-*.ipynb
-*.csv
-*.xlsx
-*.xls
+# Development notebooks and test files at root level
+/*.ipynb
+/*.csv
+/*.xlsx
+/*.xls
 
 # Documentation files (except README.md)
 *.md
