@@ -2,6 +2,9 @@
 include README.md
 include LICENSE.txt
 
+# Include HTML documentation
+recursive-include html *.html *.css *.js *.md
+
 # Include data files in the package
 include complicator/*.csv
 

@@ -1,0 +1,1928 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.6">
+<title>complicator.autopp93s4 API documentation</title>
+<meta name="description" content="">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source > summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible;min-width:max-content}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin:1em 0}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+/* Collapse source docstrings */
+setTimeout(() => {
+[...document.querySelectorAll('.hljs.language-python > .hljs-string')]
+.filter(el => el.innerHTML.length > 200 && ['"""', "'''"].includes(el.innerHTML.substring(0, 3)))
+.forEach(el => {
+let d = document.createElement('details');
+d.classList.add('hljs-string');
+d.innerHTML = '<summary>"""</summary>' + el.innerHTML.substring(3);
+el.replaceWith(d);
+});
+}, 100);
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>complicator.autopp93s4</code></h1>
+</header>
+<section id="section-intro">
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="complicator.autopp93s4.calc_params"><code class="name flex">
+<span>def <span class="ident">calc_params</span></span>(<span>Z, G, H, S, CP, V, a1, a2, a3, a4, c1, c2, omega, water_model='SUPCRT92', organic=False)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def calc_params(Z, G, H, S, CP, V,
+                a1, a2, a3, a4, c1, c2, omega,
+                water_model=&#34;SUPCRT92&#34;, organic=False):
+
+    kwargs = {&#34;V&#34;: V, &#34;Cp&#34;: CP, &#34;Gf&#34;: G, &#34;Hf&#34;: H, &#34;Saq&#34;: S,
+              &#34;a1&#34;:a1, &#34;a2&#34;:a2, &#34;a3&#34;:a3, &#34;a4&#34;:a4, &#34;c1&#34;:c1, &#34;c2&#34;:c2,
+              &#34;aq_complex&#34;: True, &#34;HKF_scale&#34;:False, &#34;Z&#34;:Z, &#34;organic&#34;:organic}
+
+    if water_model == &#34;DEW&#34;:
+        kwargs[&#34;DEW&#34;] = True
+
+    if isinstance(omega, float):
+        kwargs[&#34;omega&#34;] = omega
+    
+    kwargs[&#34;phase_TrPr&#34;] = &#34;cr&#34;
+
+    out_dict, eqn_list = wormutils.find_HKF(**kwargs)
+    
+    G = out_dict[&#34;G&#34;]
+    H = out_dict[&#34;H&#34;]
+    S = out_dict[&#34;S&#34;]
+    a1 = out_dict[&#34;a1&#34;]
+    a2 = out_dict[&#34;a2&#34;]
+    a3 = out_dict[&#34;a3&#34;]
+    a4 = out_dict[&#34;a4&#34;]
+    c1 = out_dict[&#34;c1&#34;]
+    c2 = out_dict[&#34;c2&#34;]
+    wcon = out_dict[&#34;omega&#34;]
+
+    return G, H, S, a1, a2, a3, a4, c1, c2, wcon, eqn_list</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+<dt id="complicator.autopp93s4.complicate"><code class="name flex">
+<span>def <span class="ident">complicate</span></span>(<span>cation=None,<br>ligand=None,<br>beta=None,<br>sass=None,<br>out_name=None,<br>G=None,<br>H=None,<br>S=None,<br>V=None,<br>Cp=None,<br>a1=None,<br>a2=None,<br>a3=None,<br>a4=None,<br>c1=None,<br>c2=None,<br>omega=None,<br>azero=4,<br>rt=3,<br>sigfigs=False,<br>df_in=None,<br>data_path=None,<br>ligand_abbrv_data_path=None,<br>water_model='SUPCRT92',<br>correct_basis=True,<br>skip_duplicates=True,<br>print_warnings=True,<br>SSH97_cp_eqns=False,<br>focus_on=None,<br>metal_organic_complex=False)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def complicate(cation=None, ligand=None, beta=None, sass=None, out_name=None,
+               G=None, H=None, S=None, V=None, Cp=None, a1=None, a2=None, a3=None, a4=None,
+               c1=None, c2=None, omega=None, azero=4, rt=3, sigfigs=False, df_in=None,
+               data_path=None, ligand_abbrv_data_path=None, water_model=&#34;SUPCRT92&#34;,
+               correct_basis=True, skip_duplicates=True, print_warnings=True,
+               SSH97_cp_eqns=False, focus_on=None, metal_organic_complex=False):
+    
+    &#34;&#34;&#34;
+    Estimate the thermodynamic properties and Helgeson-Kirkham-Flowers (HKF)
+    equation of state parameters for aqueous inorganic complexes.
+    
+    Parameters
+    ----------
+    cation : str
+        Name of the cation in the aqueous complex.
+        
+    ligand : str
+        Name of the ligand in the aqueous complex.
+    
+    beta : list of float
+        List of four association equilibrium constants for the first, second,
+        third, and fourth association, respectively. The first value should
+        correspond to the equilibrium constant of a reaction like this:
+        Mg+2 + Cl- = MgCl+
+        While the second should represent a reaction written like this:
+        Mg+2 + 2Cl- = MgCl2
+        And so on, up to the fourth association.
+       
+    sass : list of float, optional
+        List of four entropies of association (in cal mol-1 K-1) for the first,
+        second, third, and fourth aqueous complex, respectively. If one or more
+        values are not provided, they will be estimated from the properties of
+        the cation, ligand, and association constants. The first entropy of
+        association would be for a reaction like this:
+        Mg+2 + Cl- = MgCl+
+        While the second would be for a reaction written like this:
+        Mg+2 + 2Cl- = MgCl2
+        And so on, up to the fourth association.
+
+    out_name : str, optional
+        Name of the CSV file in which results should be exported. If out_name is
+        not specified, a file will not be written
+
+    G : list of numeric, optional
+        List of four partial molal Gibbs free energies of formation (in cal
+        mol-1) corresponding to the aqueous complex formed by the first, second,
+        third, and fourth association. If values are not provided, they will be
+        estimated from the properties of the cation, ligand, and association
+        constants.
+
+    H : list of numeric, optional
+        List of four partial molal enthalpies of formation (in cal
+        mol-1) corresponding to the aqueous complex formed by the first, second,
+        third, and fourth association. If values are not provided, they will be
+        estimated from the properties of the cation, ligand, and association
+        constants.
+
+    Cp : list of float, optional
+        List of four partial molal isobaric heat capacities (in cal mol-1 K-1)
+        corresponding to the aqueous complex formed by the first, second, third,
+        and fourth association. If values are not provided, they will be
+        estimated from the properties of the cation and ligand.
+
+    V : list of float, optional
+        List of four partial molal volumes (in cm3 mol-1) corresponding to the
+        aqueous complex formed by the first, second, third, and fourth
+        association. If values are not provided, they will be estimated from the
+        properties of the cation and ligand.
+
+    a1, a2, a3, a4, c1, c2, omega : list of float, optional
+        Parameters for the revised Helgeson Kirkam Flowers
+        equation of state. The user may provide a list of four values
+        corresponding to the aqueous complex formed by the first, second, third,
+        and fourth association. If values are not provided, they will be
+        estimated using published correlation methods.
+    
+    azero : float, default 4
+        Aqueous species hard core diameter, a parameter in the Debeye-Hückel
+        B-dot equation (Helgeson 1969) used to calculate activity coefficients.
+        Units are in angstroms.
+    
+    rt : int, default 3
+        Round output values to how many decimal places? Ignored if `sigfigs` is
+        True.
+    
+    sigfigs : bool, default False
+        Experimental. Round output values to a number of significant figures
+        determined by number of significant figures in values used to make the
+        estimation?
+
+    df_in : pandas.DataFrame or filename str, optional
+        A dataframe containing columns for &#34;Metal&#34;, &#34;Ligand&#34;, &#34;BETA_1&#34;, &#34;BETA_2&#34;,
+        &#34;BETA_3&#34;, &#34;BETA_4&#34;, &#34;S_1&#34;, &#34;S_2&#34;, &#34;S_3&#34;, &#34;S_4&#34;. If a dataframe is
+        provided to this parameter, thermodynamic estimates will be created for
+        the metal-ligand complex given on each row.
+
+        Alternatively, the name of a CSV file can be specified that will be
+        loaded as a dataframe.
+    
+    data_path : str, optional
+        File path and name of a custom thermodynamic database CSV. If undefined,
+        the default WORM database will be used.
+
+    water_model : str, default &#34;SUPCRT92&#34;
+        Can be either &#34;SUPCRT92&#34; or &#34;DEW&#34; (Deep Earth Water) model. Influences
+        the compatibility of estimated aqueous complex equation of state
+        parameters for the chosen water model. If &#34;DEW&#34; is selected, the a1
+        parameter is estimated according to Eq 16 in Sverjensky et al 2014
+        (https://doi.org/10.1016/j.gca.2013.12.019)
+    
+    correct_basis : bool, default True
+        If a cation or ligand is not a strict or auxiliary basis species in the
+        thermodynamic database, ensure the dissociation reaction of the
+        resulting complex includes only basis species? The default is True
+        because complexes that are sent to aqueous equilibration package AqEquil
+        require dissociation reactions into strict or auxiliary basis species.
+    
+    skip_duplicates : bool, default True
+        Detect whether a complex with a monovalent ligand is already in the
+        thermodynamic database without parentheses. E.g., if &#34;Ca(HCO3)+&#34; is being
+        added, check that a species named &#34;CaHCO3+&#34; isn&#39;t already in the database.
+        If set to False, the species will be added anyway, but the user will
+        be warned. If set to True, the species will not be added.
+
+    print_warnings : bool, default True
+        Print Complicator warnings?
+    
+    SSH97_cp_eqns : bool, default False
+        Use equations given in Sverjensky et al. 1997 for estimating heat
+        capacities of chloride complexes, or of acetate complexes with divalent
+        cations? If False, the Complicator will use a built-in equations to
+        estimate complex heat capacities. These equations can be viewed in the
+        &#34;equations&#34; output of the complicator.
+    
+    focus_on : list of str, optional
+        Allows the user to provide a list of metal or ligand names. The
+        Complicator will only make estimates for complexes that contain those
+        metals or ligands.
+    
+    metal_organic_complex : bool, default False
+        Is this a metal-organic complex? If True, estimation assumptions from
+        Prapaipong and Shock (2001) will be used.
+    
+    Returns
+    -------
+    df_out : pandas dataframe
+        A dataframe with estimated properties and HKF parameters of the aqueous
+        complex.
+
+    equations : dict
+        A dictionary organizing equations that were used to estimate the
+        thermodynamic properties and parameters of aqueous complexes.
+    
+    warnings : list
+        A list of warnings that were encountered.
+    
+    duplicates : list
+        A list of estimated complexes that appear to match existing complexes in
+        the thermodynamic database, reported as duplicate pairs, e.g.,
+        [[&#34;Mg(OH)+&#34;, &#34;MgOH+&#34;], ...].
+    &#34;&#34;&#34;
+
+    if print_warnings:
+        print(&#34;The WORM Complicator is in currently in beta testing. &#34;
+              &#34;Estimates should be treated with caution until the full release.&#34;)
+
+    if isinstance(df_in, str):
+        df_in = pd.read_csv(df_in)
+    
+    if isinstance(df_in, pd.DataFrame):
+
+        def complicator_check_assign(prop, row):
+            if prop in row.index:
+                if not math.isnan(row[prop]):
+                    return row[prop]
+                else:
+                    return float(&#39;NaN&#39;)
+            else:
+                return float(&#39;NaN&#39;)
+
+        equations = {}
+        warnings = []
+        duplicates = []
+        df_out_list = []
+        for index, row in df_in.iterrows():
+
+            if isinstance(focus_on, list):
+                if row[&#39;Metal&#39;] not in focus_on:
+                    continue
+                
+                if row[&#39;Ligand&#39;] not in focus_on:
+                    continue
+            
+            if &#39;BETA_1&#39; in row.index:
+                BETA1 = row[&#39;BETA_1&#39;]
+            else:
+                BETA1 = float(&#39;NaN&#39;)
+            if &#39;BETA_2&#39; in row.index:
+                BETA2 = row[&#39;BETA_2&#39;]
+            else:
+                BETA2 = float(&#39;NaN&#39;)
+            if &#39;BETA_3&#39; in row.index:
+                BETA3 = row[&#39;BETA_3&#39;]
+            else:
+                BETA3 = float(&#39;NaN&#39;)
+            if &#39;BETA_4&#39; in row.index:
+                BETA4 = row[&#39;BETA_4&#39;]
+            else:
+                BETA4 = float(&#39;NaN&#39;)
+            if math.isnan(BETA1) and math.isnan(BETA2) and math.isnan(BETA3) and math.isnan(BETA4):
+                continue
+
+            if &#39;Sass_1&#39; in row.index:
+                sass1 = row[&#39;Sass_1&#39;]
+            else:
+                sass1 = float(&#39;NaN&#39;)
+            if &#39;Sass_2&#39; in row.index:
+                sass2 = row[&#39;Sass_2&#39;]
+            else:
+                sass2 = float(&#39;NaN&#39;)
+            if &#39;Sass_3&#39; in row.index:
+                sass3 = row[&#39;Sass_3&#39;]
+            else:
+                sass3 = float(&#39;NaN&#39;)
+            if &#39;Sass_4&#39; in row.index:
+                sass4 = row[&#39;Sass_4&#39;]
+            else:
+                sass4 = float(&#39;NaN&#39;)
+
+            G_1 = complicator_check_assign(&#34;G_1&#34;, row)
+            H_1 = complicator_check_assign(&#34;H_1&#34;, row)
+            S_1 = complicator_check_assign(&#34;S_1&#34;, row)
+            V_1 = complicator_check_assign(&#34;V_1&#34;, row)
+            Cp_1 = complicator_check_assign(&#34;Cp_1&#34;, row)
+            a1_1 = complicator_check_assign(&#34;a1_1&#34;, row)
+            a2_1 = complicator_check_assign(&#34;a2_1&#34;, row)
+            a3_1 = complicator_check_assign(&#34;a3_1&#34;, row)
+            a4_1 = complicator_check_assign(&#34;a4_1&#34;, row)
+            c1_1 = complicator_check_assign(&#34;c1_1&#34;, row)
+            c2_1 = complicator_check_assign(&#34;c2_1&#34;, row)
+            omega_1 = complicator_check_assign(&#34;omega_1&#34;, row)
+            G_2 = complicator_check_assign(&#34;G_2&#34;, row)
+            H_2 = complicator_check_assign(&#34;H_2&#34;, row)
+            S_2 = complicator_check_assign(&#34;S_2&#34;, row)
+            V_2 = complicator_check_assign(&#34;V_2&#34;, row)
+            Cp_2 = complicator_check_assign(&#34;Cp_2&#34;, row)
+            a1_2 = complicator_check_assign(&#34;a1_2&#34;, row)
+            a2_2 = complicator_check_assign(&#34;a2_2&#34;, row)
+            a3_2 = complicator_check_assign(&#34;a3_2&#34;, row)
+            a4_2 = complicator_check_assign(&#34;a4_2&#34;, row)
+            c1_2 = complicator_check_assign(&#34;c1_2&#34;, row)
+            c2_2 = complicator_check_assign(&#34;c2_2&#34;, row)
+            omega_2 = complicator_check_assign(&#34;omega_2&#34;, row)
+            G_3 = complicator_check_assign(&#34;G_3&#34;, row)
+            H_3 = complicator_check_assign(&#34;H_3&#34;, row)
+            S_3 = complicator_check_assign(&#34;S_3&#34;, row)
+            V_3 = complicator_check_assign(&#34;V_3&#34;, row)
+            Cp_3 = complicator_check_assign(&#34;Cp_3&#34;, row)
+            a1_3 = complicator_check_assign(&#34;a1_3&#34;, row)
+            a2_3 = complicator_check_assign(&#34;a2_3&#34;, row)
+            a3_3 = complicator_check_assign(&#34;a3_3&#34;, row)
+            a4_3 = complicator_check_assign(&#34;a4_3&#34;, row)
+            c1_3 = complicator_check_assign(&#34;c1_3&#34;, row)
+            c2_3 = complicator_check_assign(&#34;c2_3&#34;, row)
+            omega_3 = complicator_check_assign(&#34;omega_3&#34;, row)
+            G_4 = complicator_check_assign(&#34;G_4&#34;, row)
+            H_4 = complicator_check_assign(&#34;H_4&#34;, row)
+            S_4 = complicator_check_assign(&#34;S_4&#34;, row)
+            V_4 = complicator_check_assign(&#34;V_4&#34;, row)
+            Cp_4 = complicator_check_assign(&#34;Cp_4&#34;, row)
+            a1_4 = complicator_check_assign(&#34;a1_4&#34;, row)
+            a2_4 = complicator_check_assign(&#34;a2_4&#34;, row)
+            a3_4 = complicator_check_assign(&#34;a3_4&#34;, row)
+            a4_4 = complicator_check_assign(&#34;a4_4&#34;, row)
+            c1_4 = complicator_check_assign(&#34;c1_4&#34;, row)
+            c2_4 = complicator_check_assign(&#34;c2_4&#34;, row)
+            omega_4 = complicator_check_assign(&#34;omega_4&#34;, row)
+
+            a1_1 = a1_1/10
+            a2_1 = a2_1/10**-2
+            a3_1 = a3_1
+            a4_1 = a4_1/10**-4
+            c1_1 = c1_1
+            c2_1 = c2_1/10**-4
+            omega_1 = omega_1/10**-5
+            a1_2 = a1_2/10
+            a2_2 = a2_2/10**-2
+            a3_2 = a3_2
+            a4_2 = a4_2/10**-4
+            c1_2 = c1_2
+            c2_2 = c2_2/10**-4
+            omega_2 = omega_2/10**-5
+            a1_3 = a1_3/10
+            a2_3 = a2_3/10**-2
+            a3_3 = a3_3
+            a4_3 = a4_3/10**-4
+            c1_3 = c1_3
+            c2_3 = c2_3/10**-4
+            omega_3 = omega_3/10**-5
+            a1_4 = a1_4/10
+            a2_4 = a2_4/10**-2
+            a3_4 = a3_4
+            a4_4 = a4_4/10**-4
+            c1_4 = c1_4
+            c2_4 = c2_4/10**-4
+            omega_4 = omega_4/10**-5
+
+            cation = str(row[&#39;Metal&#39;])
+            ligand = str(row[&#39;Ligand&#39;])
+            beta = [BETA1, BETA2, BETA3, BETA4]
+            G = [G_1, G_2, G_3, G_4]
+            H = [H_1, H_2, H_3, H_4]
+            S = [S_1, S_2, S_3, S_4]
+            sass = [sass1, sass2, sass3, sass4]
+            V = [V_1, V_2, V_3, V_4]
+            Cp = [Cp_1, Cp_2, Cp_3, Cp_4]
+            a1 = [a1_1, a1_2, a1_3, a1_4]
+            a2 = [a2_1, a2_2, a2_3, a2_4]
+            a3 = [a3_1, a3_2, a3_3, a3_4]
+            a4 = [a4_1, a4_2, a4_3, a4_4]
+            c1 = [c1_1, c1_2, c1_3, c1_4]
+            c2 = [c2_1, c2_2, c2_3, c2_4]
+            omega = [omega_1, omega_2, omega_3, omega_4]
+
+            df_out_row, eqn_row, warn_row, dupe_row, = complicate(cation, ligand, beta, sass,
+                    out_name, df_in=None, sigfigs=sigfigs, data_path=data_path,
+                    skip_duplicates=skip_duplicates,
+                    water_model=water_model, SSH97_cp_eqns=SSH97_cp_eqns,
+                    G=G, H=H, S=S, V=V, Cp=Cp, a1=a1, a2=a2, a3=a3, a4=a4, c1=c1, c2=c2,
+                    omega=omega, ligand_abbrv_data_path=ligand_abbrv_data_path,
+                    metal_organic_complex=metal_organic_complex,
+                    print_warnings=False)
+            
+            df_out_list.append(df_out_row)
+
+            # counts first instance of an equation but removes duplicates
+            counted_eq = []
+            for eqn in eqn_row:
+                if eqn not in counted_eq:
+                    counted_eq.append(eqn)
+            
+            equations[cation + &#34; &#34; + ligand] = counted_eq
+            warnings += warn_row
+            duplicates += dupe_row
+
+        if len(df_out_list) &gt; 0:
+            df_out = pd.concat(df_out_list, ignore_index=True)
+        else:
+            df_out = None
+
+        warnings = list(dict.fromkeys(warnings))
+        if print_warnings:
+            for warning in warnings:
+                print(warning)
+        
+        return df_out, equations, warnings, duplicates
+
+    warning_list = []
+    BETA1, BETA2, BETA3, BETA4 = beta
+
+    # convert association constants (input) into dissociation constants used by
+    # the autopp93s4 code.
+    BETA1 = -BETA1
+    BETA2 = -BETA2
+    BETA3 = -BETA3
+    BETA4 = -BETA4
+    
+    sass1, sass2, sass3, sass4 = sass
+
+    G_1, G_2, G_3, G_4 = G
+    H_1, H_2, H_3, H_4 = H
+    S_1, S_2, S_3, S_4 = S
+    Cp_1, Cp_2, Cp_3, Cp_4 = Cp
+    V_1, V_2, V_3, V_4 = V
+    a1_1, a1_2, a1_3, a1_4 = a1
+    a2_1, a2_2, a2_3, a2_4 = a2
+    a3_1, a3_2, a3_3, a3_4 = a3
+    a4_1, a4_2, a4_3, a4_4 = a4
+    c1_1, c1_2, c1_3, c1_4 = c1
+    c2_1, c2_2, c2_3, c2_4 = c2
+    omega_1, omega_2, omega_3, omega_4 = omega 
+
+    eqs_used = [] # store list of strings describing which equations were used in the estimation
+    duplicate_list = [] # store a list of complexes that appear to be duplicates of complexes that already exist in the thermodynamic database
+    duplicate_list_1 = []
+    duplicate_list_2 = []
+    duplicate_list_3 = []
+    duplicate_list_4 = []
+
+    df_out_1 = pd.DataFrame()
+    df_out_2 = pd.DataFrame()
+    df_out_3 = pd.DataFrame()
+    df_out_4 = pd.DataFrame()
+
+    if data_path == None:
+        thermo_data = wormutils.import_package_file(__name__, &#34;wrm_data.csv&#34;)
+    else:
+        thermo_data = pd.read_csv(data_path)
+
+    if ligand_abbrv_data_path == None:
+        ligand_abbrv = wormutils.import_package_file(__name__, &#34;wrm_ligand_abbrv.csv&#34;)
+    elif isinstance(ligand_abbrv_data_path, str):
+        ligand_abbrv = pd.read_csv(ligand_abbrv_data_path)
+        
+    # a list of ligand names and abbreviations,
+    # e.g., [[&#34;formate&#34;, &#34;For&#34;], [&#34;acetate&#34;, &#34;Ac&#34;]], for the sake of
+    # checking for duplicate entries in the thermodynamic database
+    ligand_name_abbrv_pairs = [[name,abbv] for name,abbv in zip(ligand_abbrv[&#34;ligand&#34;], ligand_abbrv[&#34;abbrv&#34;])]
+    
+    cation_entry = thermo_data[thermo_data[&#34;name&#34;]==cation]
+    ligand_entry = thermo_data[thermo_data[&#34;name&#34;]==ligand]
+    
+    if cation_entry.empty:
+        msg = &#34;Could not find an entry for &#34; + cation + &#34; in reference sheet.&#34;
+        warning_list.append(msg)
+        
+    if ligand_entry.empty:
+        msg = &#34;Could not find an entry for &#34; + ligand + &#34; in reference sheet.&#34;
+        warning_list.append(msg)
+
+    if cation_entry.shape[0] == 0 or ligand_entry.shape[0] == 0:
+        return pd.DataFrame(), eqs_used, warning_list, duplicate_list
+
+    V_or_Cp = True
+    if math.isnan(float(cation_entry[&#34;V&#34;].values[0])):
+        msg = &#34;Cation &#34; + cation + &#34; does not have a partial molal volume (V) in the database. Skipping estimation for &#34; + cation + &#34; &#34; + ligand + &#34; complexes.&#34;
+        warning_list.append(msg)
+        V_or_Cp = False
+    if math.isnan(float(ligand_entry[&#34;V&#34;].values[0])):
+        msg = &#34;Ligand &#34; + ligand + &#34; does not have a partial molal volume (V) in the database. Skipping estimation for &#34; + cation + &#34; &#34; + ligand + &#34; complexes.&#34;
+        warning_list.append(msg)
+        V_or_Cp = False
+    if math.isnan(float(cation_entry[&#34;Cp&#34;].values[0])):
+        msg = &#34;Cation &#34; + cation + &#34; does not have a partial molal isobaric heat capacity (Cp) in the database. Skipping estimation for &#34; + cation + &#34; &#34; + ligand + &#34; complexes.&#34;
+        warning_list.append(msg)
+        V_or_Cp = False
+    if math.isnan(float(ligand_entry[&#34;Cp&#34;].values[0])):
+        msg = &#34;Ligand &#34; + ligand + &#34; does not have a partial molal isobaric heat capacity (Cp) in the database. Skipping estimation for &#34; + cation + &#34; &#34; + ligand + &#34; complexes.&#34;
+        warning_list.append(msg)
+        V_or_Cp = False
+    
+    if not V_or_Cp:
+        return pd.DataFrame(), eqs_used, warning_list, duplicate_list
+
+    if &#34;tag&#34; in list(cation_entry.keys()):
+        if cation_entry[&#34;tag&#34;].values[0] != &#34;basis&#34; and cation_entry[&#34;tag&#34;].values[0] != &#34;aux&#34; and correct_basis:
+            cation_dissrxn = cation_entry[&#34;dissrxn&#34;].values[0]
+            cation_dissrxn_split = cation_dissrxn.split(&#34; &#34;)
+            cation_dissrxn_names = cation_dissrxn_split[1::2]
+            cation_dissrxn_coeffs = cation_dissrxn_split[::2]
+            
+            cation_dissrxn_dict_prediv = {name:float(coeff) for name,coeff in zip(cation_dissrxn_names, cation_dissrxn_coeffs)}
+            div_val = abs(cation_dissrxn_dict_prediv[cation])
+            cation_dissrxn_dict = {name:coeff/div_val for name,coeff in cation_dissrxn_dict_prediv.items()}
+            del cation_dissrxn_dict[cation]
+            
+            cation_dissrxn_dict = cation_dissrxn_dict/abs(cation_dissrxn_dict[cation])
+    
+            msg = (cation + &#34; is not a strict or auxiliary basis species. &#34;
+                  &#34;Dissociation reactions of the complex will assume the &#34;
+                  &#34;cation dissociates according to: &#34; + cation_dissrxn)
+            warning_list.append(msg)
+        else:
+            cation_dissrxn_dict = {cation:1}
+
+
+        if ligand_entry[&#34;tag&#34;].values[0] != &#34;basis&#34; and ligand_entry[&#34;tag&#34;].values[0] != &#34;aux&#34; and correct_basis:
+            ligand_dissrxn = ligand_entry[&#34;dissrxn&#34;].values[0]
+            ligand_dissrxn_split = ligand_dissrxn.split(&#34; &#34;)
+            ligand_dissrxn_names = ligand_dissrxn_split[1::2]
+            ligand_dissrxn_coeffs = ligand_dissrxn_split[::2]
+            
+            ligand_dissrxn_dict_prediv = {name:float(coeff) for name,coeff in zip(ligand_dissrxn_names, ligand_dissrxn_coeffs)}
+            div_val = abs(ligand_dissrxn_dict_prediv[ligand])
+            ligand_dissrxn_dict = {name:coeff/div_val for name,coeff in ligand_dissrxn_dict_prediv.items()}
+            del ligand_dissrxn_dict[ligand]
+    
+            msg = (ligand + &#34; is not a strict or auxiliary basis species. &#34;
+                  &#34;Dissociation reactions of the complex will assume the &#34;
+                  &#34;ligand dissociates according to: &#34; + ligand_dissrxn)
+            warning_list.append(msg)
+        else:
+            ligand_dissrxn_dict = {ligand:1}
+
+        # handle complex formula_ox
+        cation_formula_ox_dict = __get_formula_ox_dict(cation, df=thermo_data)
+        ligand_formula_ox_dict = __get_formula_ox_dict(ligand, df=thermo_data)
+    
+    else:
+        cation_dissrxn_dict = {cation:1}
+        ligand_dissrxn_dict = {ligand:1}
+        cation_formula_ox_dict = {}
+        ligand_formula_ox_dict = {}
+    
+
+    
+    ZC = str(cation_entry[&#34;z.T&#34;].values[0])
+    GC = str(cation_entry[&#34;G&#34;].values[0])
+    HC = str(cation_entry[&#34;H&#34;].values[0])
+    SC = str(cation_entry[&#34;S&#34;].values[0])
+    CPC = str(cation_entry[&#34;Cp&#34;].values[0])
+    VC = str(cation_entry[&#34;V&#34;].values[0])
+
+    if cation_entry[&#34;E_units&#34;].values[0] == &#34;J&#34;:
+        GC = GC/4.184
+        HC = HC/4.184
+        SC = SC/4.184
+        CPC = CPC/4.18
+    elif cation_entry[&#34;E_units&#34;].values[0] == &#34;cal&#34;:
+        pass
+    else:
+        msg = &#34;Cation &#34; + cation + &#34; is not identified as being Joule or calorie based in the thermodynamic database (E_units). Skipping this complex...&#34;
+        warning_list.append(msg)
+        return pd.DataFrame(), eqs_used, warning_list, duplicate_list
+    
+    if sigfigs:
+        GC_sf = find_sigfigs(GC)
+        HC_sf = find_sigfigs(HC)
+        SC_sf = find_sigfigs(SC)
+        CPC_sf = find_sigfigs(CPC)
+        VC_sf = find_sigfigs(VC)
+    else:
+        GC_sf = GC
+        HC_sf = HC
+        SC_sf = SC
+        CPC_sf = CPC
+        VC_sf = VC
+    
+    ZL = str(ligand_entry[&#34;z.T&#34;].values[0])
+    GL = str(ligand_entry[&#34;G&#34;].values[0])
+    HL = str(ligand_entry[&#34;H&#34;].values[0])
+    SL = str(ligand_entry[&#34;S&#34;].values[0])
+    CPL = str(ligand_entry[&#34;Cp&#34;].values[0])
+    VL = str(ligand_entry[&#34;V&#34;].values[0])
+
+    if ligand_entry[&#34;E_units&#34;].values[0] == &#34;J&#34;:
+        GL = GL/4.184
+        HL = HL/4.184
+        SL = SL/4.184
+        CPL = CPL/4.18
+    elif ligand_entry[&#34;E_units&#34;].values[0] == &#34;cal&#34;:
+        pass
+    else:
+        msg = &#34;Ligand &#34; + ligand + &#34; is not identified as Joule or calorie based in the thermodynamic database (E_units). Skipping this complex...&#34;
+        warning_list.append(msg)
+        return pd.DataFrame(), eqs_used, warning_list, duplicate_list
+    
+    GL_sf = find_sigfigs(GL)
+    HL_sf = find_sigfigs(HL)
+    SL_sf = find_sigfigs(SL)
+    CPL_sf = find_sigfigs(CPL)
+    VL_sf = find_sigfigs(VL)
+
+    ZC, GC, HC, SC, CPC, VC = int(float(ZC)), float(GC), float(HC), float(SC), float(CPC), float(VC)
+    ZL, GL, HL, SL, CPL, VL = int(float(ZL)), float(GL), float(HL), float(SL), float(CPL), float(VL)
+
+    G_water_298K = -56688 # cal/mol, standard Gibbs free energy of formation of water at 298.15K
+    H_water_298K = -68317 # cal/mol, standard enthalpy of formation of water at 298.15K
+    S_water_298K = 16.712 # cal/K/mol, standard entropy of formation of water at 298.15K
+    V_water_298K = 18.07 # cm3/mol, standard volume of formation of water at 298.15K
+
+    first_row_transition_metals = [&#34;Sc&#34;, &#34;Ti&#34;, &#34;V&#34;, &#34;Cr&#34;, &#34;Mn&#34;, &#34;Fe&#34;, &#34;Co&#34;, &#34;Ni&#34;, &#34;Cu&#34;]
+    transition_metals = [&#34;Sc&#34;, &#34;Ti&#34;, &#34;V&#34;, &#34;Cr&#34;, &#34;Mn&#34;, &#34;Fe&#34;, &#34;Co&#34;, &#34;Ni&#34;, &#34;Cu&#34;, &#34;Zr&#34;, &#34;Nb&#34;, &#34;Mo&#34;,
+                         &#34;Tc&#34;, &#34;Ru&#34;, &#34;Rh&#34;, &#34;Pd&#34;, &#34;Ag&#34;, &#34;Hf&#34;, &#34;Ta&#34;, &#34;W&#34;, &#34;Re&#34;, &#34;Os&#34;, &#34;Ir&#34;,
+                         &#34;Pt&#34;, &#34;Au&#34;, &#34;Hg&#34;]
+
+    alkaline_earths = [&#34;Be&#34;, &#34;Mg&#34;, &#34;Ca&#34;, &#34;Sr&#34;, &#34;Ba&#34;, &#34;Ra&#34;]
+
+    if not math.isnan(BETA1):
+        
+        ###### Calculations for the first complex
+        eqs_used.append(&#34;Beginning calculations for the first complex...&#34;)
+        
+        Z = ZC + ZL
+        Z1 = Z
+        
+        if not math.isnan(G_1):
+            G1 = G_1
+            DELGR1 = -G1 + GC + GL
+            eqs_used.append(&#34;G1 = {} cal/mol, standard Gibbs free energy of formation of the first complex&#34;.format(&#34;{0:.5g}&#34;.format(G1)))
+            eqs_used.append(&#34;DELGR1 = {} cal/mol = -G1 + GC + GL, Gibbs free energy of association of the first complex&#34;.format(&#34;{0:.5g}&#34;.format(DELGR1)))
+        else:
+            DELGR1 = (2.30259)*(1.98719)*(298.15)*BETA1
+            G1 = DELGR1 + GC + GL
+            eqs_used.append(&#34;DELGR1 = {} cal/mol = (2.30259)*(1.98719)*(298.15)*BETA1, Gibbs free energy of association of the first complex&#34;.format(&#34;{0:.5g}&#34;.format(DELGR1)))
+            eqs_used.append(&#34;Standard Gibbs free energy of formation of the cation GC = {} cal/mol, and the ligand GL = {} cal/mol&#34;.format(GC, GL))
+            eqs_used.append(&#34;G1 = {} cal/mol = DELGR1 + GC + GL, standard state partial molal Gibbs free energy of formation of the first complex&#34;.format(&#34;{0:.5g}&#34;.format(G1)))
+ 
+        # retrieve the cation&#39;s element (e.g., &#34;Fe&#34; for &#34;Fe+2&#34;)
+        cation_formula_dict = chemparse.parse_formula(cation_entry[&#34;formula&#34;].values[0])
+        cation_element = [k for k in cation_formula_dict.keys() if k != &#34;+&#34;][0]
+        
+        # Now the entropy predictor starts for the first complex
+        # if sass1 is available, use it. If not, predict it.
+        if not math.isnan(sass1) or not math.isnan(S_1):
+            # if user provides an entropy of association of the first complex...
+            if math.isnan(S_1):
+                # if user does not provide a standard entropy of the first complex...
+                DELSR1 = sass1
+                DELS1 = DELSR1
+                S1 = SC + SL + DELS1
+                eqs_used.append(&#34;Entropy of association Sass_1 = {}, third law entropy of the cation SC = {}, and ligand SL = {}, cal/mol/K&#34;.format(sass1, SC, SL))
+                eqs_used.append(&#34;DELS1 = DELSR1 = {} cal/mol/K, entropy of association of the first complex&#34;.format(&#34;{0:.5g}&#34;.format(DELS1)))
+                eqs_used.append(&#34;S1 = {} cal/mol/K = SC + SL + DELS1, standard state partial molal third law entropy of the first complex&#34;.format(&#34;{0:.5g}&#34;.format(S1)))
+            else:
+                # if user provides a third law entropy
+                S1 = S_1
+                DELSR1 = S1 - SC - SL
+                DELS1 = DELSR1
+                eqs_used.append(&#34;Third law entropy of the complex S1 = {}, cation SC = {}, and ligand SL = {}, cal/mol/K&#34;.format(S_1, SC, SL))
+                eqs_used.append(&#34;DELS1 = DELSR1 = {} cal/mol/K = S1 - SC - SL, entropy of association of the first complex&#34;.format(&#34;{0:.5g}&#34;.format(DELS1))) 
+        else:
+            # if user provides neither a standard entropy of the first complex, nor an entropy of association...
+            if ligand == &#34;OH-&#34;:
+                # correlation from Shock et al., 1997 for hydroxide complexes (table 9)
+                eqs_used.append(&#34;Beginning standard entropy estimation for the first hydroxide complex according to Shock et al., 1997...&#34;)
+                if ZC == 1:
+                    S1 = 1.32*SC - 6
+                    eqs_used.append(&#34;S1 = {} cal/K/mol = 1.32*SC + 6, Eqn for monovalent cations from Table 9 of Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(S1)))
+                elif ZC == 2:
+                    S1 = 1.32*SC + 24.5
+                    eqs_used.append(&#34;S1 = {} cal/K/mol = 1.32*SC + 24.5, Eqn for divalent cations from Table 9 of Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(S1)))
+                elif ZC == 3:
+                    if cation_element in [&#34;Ga&#34;, &#34;In&#34;, &#34;Tl&#34;, &#34;Bi&#34;]:
+                        S1 = 1.32*SC + 37
+                        eqs_used.append(&#34;S1 = {} cal/K/mol = 1.32*SC + 37, Eqn for Ga+3, In+3, Tl+3, Bi+3 from Table 9 of Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(S1)))
+                    else:
+                        S1 = 1.32*SC + 62
+                        eqs_used.append(&#34;S1 = {} cal/K/mol = 1.32*SC + 62, Eqn for trivalent cations from Table 9 of Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(S1)))
+                elif ZC == 4:
+                    S1 = 1.32*SC + 37
+                    eqs_used.append(&#34;S1 = {} cal/K/mol = 1.32*SC + 37, Eqn for tetravalent cations from Table 9 of Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(S1)))
+                else:
+                    # cation charges of 5+ are not supported
+                    msg = &#34;Estimations for hydroxide complexes for cations with 5+ charge are not supported. Skipping estimation for &#34; + cation + &#34; complexation with OH-...&#34;
+                    warning_list.append(msg)
+                    return pd.DataFrame(), eqs_used, warning_list, duplicate_list
+                DELSR1 = S1 - SC - SL
+                DELS1 = DELSR1
+                eqs_used.append(&#34;DELS1 = DELSR1 = {} cal/mol/K = S1 - SC - SL, entropy of association of the first complex&#34;.format(&#34;{0:.5g}&#34;.format(DELS1)))
+            
+            else:
+                # Eq 74-77 in Sverjensky et al 1997
+                AZ= 0.016241*Z - 0.000479
+                AZP= -0.36097*Z + 0.3209
+                BZ= 0.32102*Z  - 0.05996
+                BZP= 8.2198*Z - 1.557
+                ALPHA = AZ*(SL+(-5.0*ZL)) + AZP
+                BETA = BZ*(SL+(-5.0*ZL)) + BZP
+                DELS1 = ALPHA*(SC+(-5.0*ZC)) + BETA
+                DELSR1= DELS1
+                S1 = DELSR1 + SC + SL
+                eqs_used.append(&#34;Calculating parameters to estimate the standard third law entropy of the first complex...&#34;)
+                eqs_used.append(&#34;AZ = {} = 0.016241*Z - 0.000479, Eqn 74 in Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(AZ)))
+                eqs_used.append(&#34;AZP = {} = -0.36097*Z + 0.3209, Eqn 75 in Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(AZP)))
+                eqs_used.append(&#34;BZ = {} = 0.32102*Z  - 0.05996, Eqn 76 in Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(BZ)))
+                eqs_used.append(&#34;BZP = {} = 8.2198*Z - 1.557, Eqn 77 in Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(BZP)))
+                eqs_used.append(&#34;ALPHA = {} = AZ*(SL+(-5.0*ZL)) + AZP, Eqn pertaining to Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(ALPHA)))
+                eqs_used.append(&#34;BETA = {} = BZ*(SL+(-5.0*ZL)) + BZP, Eqn pertaining to Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(BETA)))
+                eqs_used.append(&#34;DELS1 = {} = ALPHA*(SC+(-5.0*ZC)) + BETA, Eqn pertaining to Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(DELS1)))
+                eqs_used.append(&#34;DELSR1 = DELS1 = {} cal/mol/K = S1 - SC - SL, entropy of association of the first complex&#34;.format(&#34;{0:.5g}&#34;.format(DELS1)))
+
+        if not math.isnan(H_1):
+            H1 = H_1
+            eqs_used.append(&#34;H1 = {} cal/mol, standard enthalpy of the first complex&#34;.format(&#34;{0:.5g}&#34;.format(H1)))
+        else:
+            DELHR1 = DELGR1 + (298.15*DELSR1)
+            H1 = DELHR1 + HC + (1.0*HL)
+            eqs_used.append(&#34;DELHR1 = {} cal/mol = DELGR1 + (298.15*DELSR1), enthalpy of the first association&#34;.format(&#34;{0:.5g}&#34;.format(DELHR1)))
+            eqs_used.append(&#34;H1 = {} cal/mol = DELHR1 + HC + (1.0*HL), standard enthalpy of the first complex&#34;.format(&#34;{0:.5g}&#34;.format(H1)))
+
+        if not math.isnan(Cp_1):
+            # if user provides a heat capacity
+            CP1 = Cp_1
+            DELCP1 = CP1 - CPC - CPL
+            eqs_used.append(&#34;Isobaric heat capacity of the complex CP1 = {}, cation CPC = {}, and ligand CPL = {}, cal/mol/K&#34;.format(Cp_1, CPC, CPL))
+            eqs_used.append(&#34;DELCP1 = {} cal/mol/K = CP1 - CPC - CPL, heat capacity of association of the first complex&#34;.format(&#34;{0:.5g}&#34;.format(DELCP1)))
+        else:
+            if ligand == &#34;OH-&#34;:
+                if ZC in [1, 2]:
+                    CP1 = -1.14*S1 + 9
+                    eqs_used.append(&#34;CP1 = {} cal/mol/K = -1.14*S1 + 9, Eqn for monovalent and divalent cations from Table 9 of Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(CP1)))
+                elif ZC in [3, 4]:
+                    CP1 = -1.14*S1 - 37.2
+                    eqs_used.append(&#34;CP1 = {} cal/mol/K = -1.14*S1 - 37.2, Eqn for trivalent and tetravalent cations from Table 9 of Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(CP1)))
+                else:
+                    # cations with &gt;4 charge have been weeded out in entropy calculation already
+                    CP1 = float(&#39;NaN&#39;)
+                DELCP1 = CP1 - CPC - CPL
+            elif metal_organic_complex:
+                DELCP1 = 80 # Prapaipong and Shock 2001
+                CP1 = DELCP1 + CPC + CPL
+                eqs_used.append(&#34;DELCP1 = {} cal/mol/K = 80, assumption for metal organic complexes made in Prapaipong and Shock 2001&#34;.format(&#34;{0:.5g}&#34;.format(DELCP1)))
+                eqs_used.append(&#34;CP1 = {} cal/mol/K = DELCP1 + CPC + CPL, standard isobaric heat capacity of the first complex&#34;.format(&#34;{0:.5g}&#34;.format(CP1)))
+            else:
+                if SSH97_cp_eqns and ligand == &#34;Cl-&#34;:
+                    # GB modified 2024 to add equations as they appear in Sverjensky et al., 1997:
+                    DELCP1 = 1.25*CPC + 45.3*(Z1+1) - 27.3
+                    CP1 = DELCP1 + CPC + CPL
+                    eqs_used.append(&#34;DELCP1 = {} cal/mol/K = 1.25*CPC + 45.3*(Z1+1) - 27.3, Eqn 53 in Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(DELCP1)))
+                    eqs_used.append(&#34;CP1 = {} cal/mol/K = DELCP1 + CPC + CPL, standard isobaric heat capacity of the first complex&#34;.format(&#34;{0:.5g}&#34;.format(CP1)))
+                elif SSH97_cp_eqns and ligand ==&#34;acetate&#34; and ZC == 2:
+                    # GB modified 2024 to add equations as they appear in Sverjensky et al., 1997:
+                    DELCP1 = 1.25*CPC + +93.8
+                    CP1 = DELCP1 + CPC + CPL
+                    eqs_used.append(&#34;DELCP1 = {} cal/mol/K = 1.25*CPC + 93.8, Eqn 54 in Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(DELCP1)))
+                    eqs_used.append(&#34;CP1 = {} cal/mol/K = DELCP1 + CPC + CPL, standard isobaric heat capacity of the first complex&#34;.format(&#34;{0:.5g}&#34;.format(CP1)))
+                else:
+                    # ES notes from original fortran code: Here the Cp predictor starts for the first complex.
+                    # Modified 8 Aug 1992 after latest revision Modified 17 March 1992 to
+                    # incorporate changes from last July 1991
+                    dz = 0.856*CPL - 2.1 + 45.3*ZC
+                    DELCP1 = 1.25*CPC + dz
+                    CP1 = DELCP1 + CPC + CPL
+                    eqs_used.append(&#34;dz = {} = 0.856*CPL - 2.1 + 45.3*ZC, unpublished equation pertaining to Haas et al 1995, Shock et al. 1995, and Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(dz)))
+                    eqs_used.append(&#34;DELCP1 = {} cal/mol/K = 1.25*CPC + dz, unpublished equation pertaining to Haas et al 1995, Shock et al. 1995, and Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(DELCP1)))
+                    eqs_used.append(&#34;CP1 = {} cal/mol/K = DELCP1 + CPC + CPL, standard isobaric heat capacity of the first complex&#34;.format(&#34;{0:.5g}&#34;.format(CP1)))
+
+        if not math.isnan(V_1):
+            # if user provides a volume
+            V1 = V_1
+            DELVR1 = V1 - VC - VL
+            eqs_used.append(&#34;Volume of the complex V1 = {}, cation VC = {}, and ligand VL = {}, cal/mol/K&#34;.format(V1, VC, VL))
+            eqs_used.append(&#34;DELVR1 = {} cm3/mol = V1 - VC - VL, volume of association of the first complex&#34;.format(&#34;{0:.5g}&#34;.format(DELVR1)))
+        else:
+            use_sverjensky_V_methods = True
+            if ligand == &#34;OH-&#34;:
+                use_sverjensky_V_methods = False
+                if ZC == 1:
+                    use_sverjensky_V_methods = True
+                elif ZC == 2:
+                    if cation_element in transition_metals:
+                        V1 = 0.45*S1 - 12
+                        eqs_used.append(&#34;V1 = {} cm3/mol = 0.45*S1 - 12, see Table 9 in Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(V1)))
+                    elif cation_element in alkaline_earths:
+                        V1 = 0.16*S1 + 4.9
+                        eqs_used.append(&#34;V1 = {} cm3/mol = 0.16*S1 + 4.9, see Table 9 in Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(V1)))
+                    else:
+                        V1 = float(&#39;NaN&#39;)
+                elif Z == 3:
+                    if cation_element in first_row_transition_metals:
+                        V1 = 0.45*S1 - 12
+                        eqs_used.append(&#34;V1 = {} cm3/mol = 0.45*S1 - 12, see Table 9 in Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(V1)))
+                    else:
+                        V1 = 0.16*S1 + 4.9
+                        eqs_used.append(&#34;V1 = {} cm3/mol = 0.16*S1 + 4.9, see Table 9 in Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(V1)))
+                elif Z == 4:
+                    V1 = 0.16*S1 + 4.9
+                    eqs_used.append(&#34;V1 = {} cm3/mol = 0.16*S1 + 4.9, see Table 9 in Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(V1)))
+                else:
+                    # this cation element is not supported by existing methods
+                    V1 = float(&#34;NaN&#34;)
+    
+            if ligand != &#34;OH-&#34; or use_sverjensky_V_methods:
+                # Here the Volume predictor starts for the first complex
+                DELVR1  = 0.11419*VC + 8.9432 # Eq. 62 in Sverjensky et al 1997
+                V1 = DELVR1 + VC + VL
+                eqs_used.append(&#34;DELVR1 = {} cm3/mol = 0.11419*VC + 8.9432, Eq. 62 in Sverjensky et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(DELVR1)))
+                eqs_used.append(&#34;V1 = {} cm3/mol = DELVR1 + VC + VL, standard volume of the first complex&#34;.format(&#34;{0:.5g}&#34;.format(V1)))
+
+    if not math.isnan(BETA2):
+        ###### Calculations for the second complex
+        eqs_used.append(&#34;Beginning calculations for the second complex...&#34;)
+        Z = Z + ZL
+        Z2 = Z
+
+
+        if not math.isnan(G_2):
+            G2 = G_2
+            DELGR2 = -G2 + GC + (2.0*GL)
+            eqs_used.append(&#34;G2 = {} cal/mol, standard Gibbs free energy of formation of the second complex&#34;.format(&#34;{0:.5g}&#34;.format(G2)))
+            eqs_used.append(&#34;DELGR2 = {} cal/mol = -G2 + GC + (2.0*GL), Gibbs free energy of association of the second complex&#34;.format(&#34;{0:.5g}&#34;.format(DELGR2)))
+        else:
+            DELGR2 = 2.30259*1.98719*298.15*BETA2
+            G2 = DELGR2 + GC + (2.0*GL)
+            eqs_used.append(&#34;DELGR2 = {} cal/mol = 2.30259*1.98719*298.15*BETA2, Gibbs free energy of association of the second complex&#34;.format(&#34;{0:.5g}&#34;.format(DELGR2)))
+            eqs_used.append(&#34;G2 = {} cal/mol = DELGR2 + GC + (2.0*GL), standard state partial molal Gibbs free energy of formation of the second complex&#34;.format(&#34;{0:.5g}&#34;.format(G2)))
+    
+        if ligand == &#34;OH-&#34;:
+            # subtract the Gibbs free energy of 1 water
+            G2 = G2 - G_water_298K
+            DELGR2 = G2 - GC - (2.0*GL) + G_water_298K
+            eqs_used.append(&#34;G2 = {} cal/mol = G2 - G_water_298K, subtract the standard Gibbs free energy of H2O at 298.15K as per the convention outlined in Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(G2)))
+    
+        # if sass2 is available, use it. If not, predict it.
+        if not math.isnan(sass2) or not math.isnan(S_2):
+            if math.isnan(S_2):
+                DELSR2 = sass2
+                DELS2 = DELSR2 - DELS1
+                S2 = SC + 2.0*SL + DELS1 + DELS2
+                eqs_used.append(&#34;Sass_2 = {} cal/mol/K, entropy of association of the second complex&#34;.format(sass2))
+                eqs_used.append(&#34;DELS2 = {} cal/mol/K = DELSR2 - DELS1, entropy of association of the second complex from the first complex&#34;.format(&#34;{0:.5g}&#34;.format(DELS2)))
+                eqs_used.append(&#34;S2 = {} cal/mol/K = SC + 2.0*SL + DELS1 + DELS2, standard state partial molal third law entropy of the second complex&#34;.format(&#34;{0:.5g}&#34;.format(S2)))
+            else:
+                S2 = S_2
+                DELSR2 = S2 - SC - (2.0*SL)
+                DELS2 = DELSR2 - DELS1
+                eqs_used.append(&#34;Third law entropy of the second complex S2 = {}, cation SC = {}, and ligand SL = {}, cal/mol/K&#34;.format(S_2, SC, SL))
+                eqs_used.append(&#34;DELSR2 = {} cal/mol/K = S2 - SC - (2.0*SL), entropy of association of the second complex&#34;.format(&#34;{0:.5g}&#34;.format(DELSR2)))
+                eqs_used.append(&#34;DELS2 = {} cal/mol/K = DELSR2 - DELS1, entropy of association of the second complex from the first complex&#34;.format(&#34;{0:.5g}&#34;.format(DELS2)))
+        else:
+            if ligand == &#34;OH-&#34;:
+                # correlation from Shock et al., 1997 for second hydroxide complexes (table 9)
+                eqs_used.append(&#34;Beginning standard entropy estimation for the second hydroxide complex according to Shock et al., 1997...&#34;)
+                if ZC == 1:
+                    S2 = 1.42*SC - 11
+                    eqs_used.append(&#34;S2 = {} cal/K/mol = 1.42*SC - 11, Eqn for monovalent cations from Table 9 of Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(S2)))
+                elif ZC == 2:
+                    S2 = 1.42*SC + 20.5
+                    eqs_used.append(&#34;S2 = {} cal/K/mol = 1.42*SC + 20.5, Eqn for divalent cations from Table 9 of Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(S2)))
+                elif ZC == 3:
+                    S2 = 1.42*SC + 83
+                    eqs_used.append(&#34;S2 = {} cal/K/mol = 1.42*SC + 83, Eqn for trivalent cations from Table 9 of Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(S2)))
+                elif ZC == 4:
+                    S2 = 1.42*SC + 108
+                    eqs_used.append(&#34;S2 = {} cal/K/mol = 1.42*SC + 108, Eqn for tetravalent cations from Table 9 of Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(S2)))
+                else:
+                    # cation charges of 5+ are not supported but have already been weeded out...
+                    S2 = float(&#39;NaN&#39;)
+                
+                DELSR2 = S2 - SC - (2.0*SL) + S_water_298K
+                DELS2 = DELSR2 - DELS1
+                eqs_used.append(&#34;DELSR2 = {} cal/mol/K = S2 - SC - (2.0*SL) + S_water_298K, entropy of association of the second complex&#34;.format(&#34;{0:.5g}&#34;.format(DELSR2)))
+                eqs_used.append(&#34;DELS2 = {} cal/mol/K = DELSR2 - DELS1, entropy of association of the second complex from the first complex&#34;.format(&#34;{0:.5g}&#34;.format(DELS2)))
+            else:
+                # Eq 74-77 in Sverjensky et al 1997
+                AZ = 0.016241*Z - 0.000479
+                AZP = -0.36097*Z + 0.3209
+                BZ = 0.32102*Z  - 0.05996
+                BZP = 8.2198*Z - 1.557
+                ALPHA = AZ*(SL+(-5.0*ZL)) + AZP
+                BETA = BZ*(SL+(-5.0*ZL)) + BZP
+                DELS2 = ALPHA*(S1+(-5.0*(ZC+ZL))) + BETA
+                DELSR2= DELS1 + DELS2
+                S2 = DELSR2 + SC + (2.0*SL)
+                eqs_used.append(&#34;Calculating parameters to estimate the standard third law entropy of the second complex...&#34;)
+                eqs_used.append(&#34;AZ = {} = 0.016241*Z - 0.000479, Eqn 74 in Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(AZ)))
+                eqs_used.append(&#34;AZP = {} = -0.36097*Z + 0.3209, Eqn 75 in Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(AZP)))
+                eqs_used.append(&#34;BZ = {} = 0.32102*Z  - 0.05996, Eqn 76 in Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(BZ)))
+                eqs_used.append(&#34;BZP = {} = 8.2198*Z - 1.557, Eqn 77 in Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(BZP)))
+                eqs_used.append(&#34;ALPHA = {} = AZ*(SL+(-5.0*ZL)) + AZP, Eqn pertaining to Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(ALPHA)))
+                eqs_used.append(&#34;BETA = {} = BZ*(SL+(-5.0*ZL)) + BZP, Eqn pertaining to Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(BETA)))
+                eqs_used.append(&#34;DELS2 = {} cal/mol/K = ALPHA*(S1+(-5.0*(ZC+ZL))) + BETA, Eqn pertaining to Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(DELS2)))
+                eqs_used.append(&#34;DELSR2 = {} cal/mol/K = DELS1 + DELS2, entropy of association for the second complex (cal/mol/K)&#34;.format(&#34;{0:.5g}&#34;.format(DELSR2)))
+                eqs_used.append(&#34;S2 = {} cal/mol/K = DELSR2 + SC + (2.0*SL), standard third law entropy of the second complex&#34;.format(&#34;{0:.5g}&#34;.format(S2)))
+
+        if not math.isnan(H_2):
+            H2 = H_2
+            eqs_used.append(&#34;H2 = {} cal/mol, standard enthalpy of the second complex&#34;.format(&#34;{0:.5g}&#34;.format(H2)))
+        else:
+            DELHR2 = DELGR2 + (298.15*DELSR2)
+            H2 = DELHR2 + HC + (2.0*HL)
+            eqs_used.append(&#34;DELHR2 = {} cal/mol = DELGR2 + (298.15*DELSR2), enthalpy of the second association&#34;.format(&#34;{0:.5g}&#34;.format(DELHR2)))
+            eqs_used.append(&#34;H2 = {} cal/mol = DELHR2 + HC + (2.0*HL), standard enthalpy of the second complex&#34;.format(&#34;{0:.5g}&#34;.format(H2)))
+        
+        if ligand == &#34;OH-&#34;:
+            H2 = H2 - H_water_298K
+            eqs_used.append(&#34;H2 = {} cal/mol = H2 - H_water_298K, subtract the standard enthalpy of H2O at 298.15K as per the convention outlined in Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(G2)))
+        
+        if not math.isnan(Cp_2):
+            # if user provides a heat capacity
+            CP2 = Cp_2
+            DELCP2 = CP2 - CPC - CPL
+            eqs_used.append(&#34;Isobaric heat capacity of the complex CP2 = {}, cation CPC = {}, and ligand CPL = {}, cal/mol/K&#34;.format(Cp_2, CPC, CPL))
+            eqs_used.append(&#34;DELCP2 = {} cal/mol/K = CP2 - CPC - CPL, heat capacity of association of the second complex&#34;.format(&#34;{0:.5g}&#34;.format(DELCP2)))
+        else:
+            if ligand == &#34;OH-&#34;:
+                if ZC in [1, 2]:
+                    CP2 = -1.14*S2 - 15.5
+                    eqs_used.append(&#34;CP2 = {} cal/mol/K = -1.14*S2 - 15.5, Eqn for monovalent and divalent cations from Table 9 of Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(CP2)))
+                elif ZC in [3, 4]:
+                    CP2 = -1.14*S2 - 60.8
+                    eqs_used.append(&#34;CP1 = {} cal/mol/K = -1.14*S2 - 60.8, Eqn for trivalent and tetravalent cations from Table 9 of Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(CP2)))
+                else:
+                    # cations with &gt;4 charge have been weeded out in entropy calculation already
+                    CP2 = float(&#39;NaN&#39;)
+                DELCPR2 = CP2 - CPC - (2.0*CPL)
+                DELCP2 = DELCPR2 - DELCP1
+            else:
+                if SSH97_cp_eqns and ligand == &#34;Cl-&#34;:
+                    # GB added 2024: Cp equations as they appear in Sverjensky et al., 1997
+                    DELCP2 = (0.89*CPC - 4.9)*1 + DELCP1
+                    CP2 = DELCP2 + CP1 + CPL
+                    eqs_used.append(&#34;DELCP2 = {} cal/mol/K = (0.89*CPC - 4.9)*1 + DELCP1, Eqn 58 in Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(DELCP2)))
+                    eqs_used.append(&#34;CP2 = {} cal/mol/K = DELCP1 + CPC + CPL, standard isobaric heat capacity of the second complex&#34;.format(&#34;{0:.5g}&#34;.format(CP2)))
+                elif SSH97_cp_eqns and ligand == &#34;acetate&#34; and ZC == 2:
+                    # GB modified 2024 to add equations as they appear in Sverjensky et al., 1997:
+                    DELCP2 = (0.89*CPC + 20.6)*1 + DELCP1
+                    CP2 = DELCP2 + CP1 + CPL
+                    eqs_used.append(&#34;DELCP2 = {} cal/mol/K = (0.89*CPC + 20.6)*1 + DELCP1, Eqn 59 in Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(DELCP2)))
+                    eqs_used.append(&#34;CP2 = {} cal/mol/K = DELCP1 + CPC + CPL, standard isobaric heat capacity of the second complex&#34;.format(&#34;{0:.5g}&#34;.format(CP2)))
+                else:
+                    # ES note from original fortran code: CHANGED 17 MARCH 1992!!!
+                    gz = 0.89*CPC + 0.72*CPL + 16.3
+                    DELCP2 = DELCP1 + gz
+                    CP2 = DELCP2 + CP1 + CPL
+                    eqs_used.append(&#34;gz = {} = 0.89*CPC + 0.72*CPL + 16.3, unpublished equation pertaining to Haas et al 1995, Shock et al. 1995, and Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(gz)))
+                    eqs_used.append(&#34;DELCP2 = {} cal/mol/K = DELCP1 + gz, unpublished equation pertaining to Haas et al 1995, Shock et al. 1995, and Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(DELCP2)))
+                    eqs_used.append(&#34;CP2 = {} cal/mol/K = DELCP2 + CPC + CPL, standard isobaric heat capacity of the second complex&#34;.format(&#34;{0:.5g}&#34;.format(CP2)))
+                
+        if not math.isnan(V_2):
+            # if user provides a volume
+            V2 = V_2
+            DELVR2 = V2 - VC - VL
+            eqs_used.append(&#34;Volume of the complex V2 = {}, cation VC = {}, and ligand VL = {}, cal/mol/K&#34;.format(V2, VC, VL))
+            eqs_used.append(&#34;DELVR2 = {} cm3/mol = V2 - VC - VL, volume of association of the second complex&#34;.format(&#34;{0:.5g}&#34;.format(DELVR2)))
+        else:
+            if ligand == &#34;OH-&#34;:
+                if ZC == 1:
+                    V2 = 0.45*S2 - 12
+                    eqs_used.append(&#34;V2 = {} cm3/mol = 0.45*S2 - 12, see Table 9 in Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(V2)))
+                elif ZC == 2:
+                    if cation_element in transition_metals:
+                        V2 = 0.45*S2 - 12
+                        eqs_used.append(&#34;V2 = {} cm3/mol = 0.45*S2 - 12, see Table 9 in Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(V2)))
+                    elif cation_element in alkaline_earths:
+                        V2 = 0.16*S2 + 4.9
+                        eqs_used.append(&#34;V2 = {} cm3/mol = 0.16*S2 + 4.9, see Table 9 in Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(V2)))
+                    else:
+                        # cation element is not supported
+                        V2 = float(&#39;NaN&#39;)
+                elif ZC == 3:
+                    if cation_element in first_row_transition_metals:
+                        V2 = 0.45*S2 - 12
+                        eqs_used.append(&#34;V2 = {} cm3/mol = 0.45*S2 - 12, see Table 9 in Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(V2)))
+                    else:
+                        V2 = 0.16*S2 + 4.9
+                        eqs_used.append(&#34;V2 = {} cm3/mol = 0.16*S2 + 4.9, see Table 9 in Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(V2)))
+                elif ZC == 4:
+                    V2 = 0.16*S2 + 4.9
+                    eqs_used.append(&#34;V2 = {} cm3/mol = 0.16*S2 + 4.9, see Table 9 in Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(V2)))
+                else:
+                    # cations with 5+ charge are not supported
+                    V2 = float(&#34;NaN&#34;)
+                
+                DELVR2 = V2 - VC - (2.0*VL) + V_water_298K
+            
+            else:
+                DELVR2  = 0.11419*V1 + 8.9432 # Eq. 62 in Sverjensky et al 1997
+                V2 = DELVR2 + DELVR1 + VC + (2.0*VL)
+                eqs_used.append(&#34;DELVR2 = {} cm3/mol = 0.11419*V1 + 8.9432, Eq. 62 in Sverjensky et al 1997&#34;.format(&#34;{0:.5g}&#34;.format(DELVR2)))
+                eqs_used.append(&#34;V2 = {} cm3/mol = DELVR2 + DELVR1 + VC + (2.0*VL), standard volume of the second complex&#34;.format(&#34;{0:.5g}&#34;.format(V2)))
+
+    if not math.isnan(BETA3):
+        ###### Calculations for the third complex
+        eqs_used.append(&#34;Beginning calculations for the third complex...&#34;)
+        Z = Z + ZL
+        Z3 = Z
+        
+        if not math.isnan(G_3):
+            G3 = G_3
+            DELGR3 = -G3 + GC + (3.0*GL)
+            eqs_used.append(&#34;G3 = {} cal/mol, standard Gibbs free energy of formation of the third complex&#34;.format(&#34;{0:.5g}&#34;.format(G3)))
+            eqs_used.append(&#34;DELGR3 = {} cal/mol = -G3 + GC + (3.0*GL), Gibbs free energy of association of the third complex&#34;.format(&#34;{0:.5g}&#34;.format(DELGR3)))
+        else:
+            DELGR3 = 2.30259*1.98719*298.15*BETA3
+            G3 = DELGR3 + GC + (3.0*GL)
+            eqs_used.append(&#34;DELGR3 = {} cal/mol = 2.30259*1.98719*298.15*BETA3, Gibbs free energy of association of the third complex&#34;.format(&#34;{0:.5g}&#34;.format(DELGR3)))
+            eqs_used.append(&#34;G3 = {} cal/mol = DELGR3 + GC + (3.0*GL), standard state partial molal Gibbs free energy of formation of the third complex&#34;.format(&#34;{0:.5g}&#34;.format(G3)))
+    
+        if ligand == &#34;OH-&#34;:
+            G3 = G3 - G_water_298K
+            DELGR3 = G3 - GC - (3.0*GL) + G_water_298K
+            # subtract the Gibbs free energy of 1 water
+            eqs_used.append(&#34;G3 = {} cal/mol = G3 - G_water_298K, subtract the standard Gibbs free energy of H2O at 298.15K as per the convention outlined in Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(G3)))
+    
+        # if sass3 is available, use it. If not, predict it.
+        if not math.isnan(sass3) or not math.isnan(S_3):
+            if math.isnan(S_3):
+                DELSR3 = sass3
+                DELS3 = DELSR3 - DELS1 - DELS2
+                S3 = SC + 3.0*SL + DELS1 + DELS2 + DELS3
+                eqs_used.append(&#34;Sass_23= {} cal/mol/K, entropy of association of the third complex&#34;.format(sass3))
+                eqs_used.append(&#34;DELS3 = {} cal/mol/K = DELSR3 - DELS1 - DELS2, entropy of association of the third complex from the second complex&#34;.format(&#34;{0:.5g}&#34;.format(DELS3)))
+                eqs_used.append(&#34;S3 = {} cal/mol/K = SC + 2.0*SL + DELS1 + DELS2, standard state partial molal third law entropy of the third complex&#34;.format(&#34;{0:.5g}&#34;.format(S3)))
+            else:
+                S3 = S_3
+                DELSR3 = S3 - SC - (3.0*SL)
+                DELS3 = DELSR3 - DELS1 - DELS2
+                eqs_used.append(&#34;Third law entropy of the third complex S3 = {}, cation SC = {}, and ligand SL = {}, cal/mol/K&#34;.format(S_3, SC, SL))
+                eqs_used.append(&#34;DELSR3 = {} cal/mol/K = S3 - SC - (3.0*SL), entropy of association of the third complex&#34;.format(&#34;{0:.5g}&#34;.format(DELSR3)))
+                eqs_used.append(&#34;DELS3 = {} cal/mol/K = DELSR3 - DELS1 - DELS2, entropy of association of the third complex from the second complex&#34;.format(&#34;{0:.5g}&#34;.format(DELS3)))
+        else:
+            if ligand == &#34;OH-&#34;:
+                # correlation from Shock et al., 1997 for third hydroxide complexes (table 9)
+                eqs_used.append(&#34;Beginning standard entropy estimation for the third hydroxide complex according to Shock et al., 1997...&#34;)
+                if ZC == 1:
+                    # no support for a third hydroxide complex for monovalent cations
+                    msg = &#34;The third hydroxide complex for a monovalent cation is not supported by existing estimation methods. Skipping third hydroxide complex of &#34; + cation
+                    warning_list.append(msg)
+                    S3 = float(&#39;NaN&#39;)
+                elif ZC == 2:
+                    S3 = 1.52*SC + 15.5
+                    eqs_used.append(&#34;S3 = {} cal/K/mol = 1.52*SC + 15.5, Eqn for divalent cations from Table 9 of Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(S3)))
+                elif ZC == 3:
+                    S3 = 1.52*SC + 123
+                    eqs_used.append(&#34;S3 = {} cal/K/mol = 1.52*SC + 123, Eqn for trivalent cations from Table 9 of Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(S3)))
+                elif ZC == 4:
+                    S3 = 1.52*SC + 140
+                    eqs_used.append(&#34;S3 = {} cal/K/mol = 1.52*SC + 140, Eqn for tetravalent cations from Table 9 of Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(S3)))
+                else:
+                    # cation charges of 5+ are not supported
+                    msg = &#34;Cations with 5+ charge are not supoported by existing estimation methods. Skipping &#34; + cation
+                    warning_list.append(msg)
+                    S3 = float(&#39;NaN&#39;)
+                
+                DELSR3 = S3 - SC - (3.0*SL) + S_water_298K
+                DELS3 = DELSR3 - DELSR2 - DELS1
+                eqs_used.append(&#34;DELSR3 = {} cal/mol/K = S3 - SC - (3.0*SL) + S_water_298K, entropy of association of the third complex&#34;.format(&#34;{0:.5g}&#34;.format(DELSR3)))
+                eqs_used.append(&#34;DELS3 = {} cal/mol/K = DELSR3 - DELSR2 - DELS1, entropy of association of the third complex from the second complex&#34;.format(&#34;{0:.5g}&#34;.format(DELS3)))
+            else:
+                # Eq 74-77 in Sverjensky et al 1997
+                AZ= 0.016241*Z - 0.000479
+                AZP= -0.36097*Z + 0.3209
+                BZ= 0.32102*Z  - 0.05996
+                BZP= 8.2198*Z - 1.557
+                ALPHA = AZ*(SL+(-5.0*ZL)) + AZP
+                BETA = BZ*(SL+(-5.0*ZL)) + BZP
+                DELS3 = ALPHA*(S2+(-5.0*(ZC+(2*ZL)))) + BETA
+                DELSR3= DELS1 + DELS2 + DELS3
+                S3 = DELSR3 + SC + (3.0*SL)
+                eqs_used.append(&#34;Calculating parameters to estimate the standard third law entropy of the third complex...&#34;)
+                eqs_used.append(&#34;AZ = {} = 0.016241*Z - 0.000479, Eqn 74 in Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(AZ)))
+                eqs_used.append(&#34;AZP = {} = -0.36097*Z + 0.3209, Eqn 75 in Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(AZP)))
+                eqs_used.append(&#34;BZ = {} = 0.32102*Z  - 0.05996, Eqn 76 in Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(BZ)))
+                eqs_used.append(&#34;BZP = {} = 8.2198*Z - 1.557, Eqn 77 in Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(BZP)))
+                eqs_used.append(&#34;ALPHA = {} = AZ*(SL+(-5.0*ZL)) + AZP, Eqn pertaining to Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(ALPHA)))
+                eqs_used.append(&#34;BETA = {} = BZ*(SL+(-5.0*ZL)) + BZP, Eqn pertaining to Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(BETA)))
+                eqs_used.append(&#34;DELS3 = {} cal/mol/K = ALPHA*(S2+(-5.0*(ZC+(2*ZL)))) + BETA, Eqn pertaining to Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(DELS3)))
+                eqs_used.append(&#34;DELSR3 = {} cal/mol/K = DELS1 + DELS2 + DELS3, entropy of association for the third complex (cal/mol/K)&#34;.format(&#34;{0:.5g}&#34;.format(DELSR3)))
+                eqs_used.append(&#34;S3 = {} cal/mol/K = DELSR2 + SC + (2.0*SL), standard third law entropy of the third complex&#34;.format(&#34;{0:.5g}&#34;.format(S3)))
+
+        if not math.isnan(H_3):
+            H3 = H_3
+            eqs_used.append(&#34;H3 = {} cal/mol, standard enthalpy of the third complex&#34;.format(&#34;{0:.5g}&#34;.format(H3)))
+        else:
+            DELHR3 = DELGR3 + (298.15*DELSR3)
+            H3 = DELHR3 + HC + (3.0*HL)
+            eqs_used.append(&#34;DELHR3 = {} cal/mol = DELGR3 + (298.15*DELSR3), enthalpy of the third association&#34;.format(&#34;{0:.5g}&#34;.format(DELHR3)))
+            eqs_used.append(&#34;H3 = {} cal/mol = DELHR3 + HC + (3.0*HL), standard enthalpy of the third complex&#34;.format(&#34;{0:.5g}&#34;.format(H3)))
+        
+        if ligand == &#34;OH-&#34;:
+            H3 = H3 - H_water_298K
+            eqs_used.append(&#34;H3 = {} cal/mol = H3 + H_water_298K, subtract the standard enthalpy of H2O at 298.15K as per the convention outlined in Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(H3)))
+
+        if not math.isnan(Cp_3):
+            # if user provides a heat capacity
+            CP3 = Cp_3
+            DELCP3 = CP3 - CPC - CPL
+            eqs_used.append(&#34;Isobaric heat capacity of the complex CP3 = {}, cation CPC = {}, and ligand CPL = {}, cal/mol/K&#34;.format(Cp_3, CPC, CPL))
+            eqs_used.append(&#34;DELCP3 = {} cal/mol/K = CP3 - CPC - CPL, heat capacity of association of the third complex&#34;.format(&#34;{0:.5g}&#34;.format(DELCP3)))
+        else:
+            if ligand == &#34;OH-&#34;:
+                if ZC == 1:
+                    # third hydroxide complex of a monovalent cation is not supported
+                    CP3 = float(&#39;NaN&#39;)
+                elif ZC in [2,3,4]:
+                    CP3 = -2.28*S3 - 24.0
+                    eqs_used.append(&#34;CP3 = {} cal/mol/K = -2.28*S3 - 24.0, Eqn for di-, tri-, tetravalent cations from Table 9 of Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(CP2)))
+                else:
+                    # cations with &gt;4 charge have been weeded out in entropy calculation already
+                    CP3 = float(&#39;NaN&#39;)
+                DELCPR3 = CP3 - CPC - (3.0*CPL)
+                DELCP3 = DELCPR3 - DELCPR2 - DELCP1
+            else:
+                if SSH97_cp_eqns and ligand == &#34;Cl-&#34;:
+                    # GB added 2024
+                    DELCP3 = (0.89*CPC - 4.9)*2 + DELCP1
+                    CP3 = DELCP3 + CP2 + CPL
+                    eqs_used.append(&#34;DELCP3 = {} cal/mol/K = (0.89*CPC - 4.9)*2 + DELCP1, Eqn 58 in Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(DELCP3)))
+                    eqs_used.append(&#34;CP3 = {} cal/mol/K = DELCP1 + CPC + CPL, standard isobaric heat capacity of the third complex&#34;.format(&#34;{0:.5g}&#34;.format(CP3)))
+                elif SSH97_cp_eqns and ligand == &#34;acetate&#34; and ZC == 2:
+                    # GB modified 2024 to add equations as they appear in Sverjensky et al., 1997:
+                    DELCP3 = (0.89*CPC + 20.6)*2 + DELCP1
+                    CP3 = DELCP3 + CP2 + CPL
+                    eqs_used.append(&#34;DELCP4 = {} cal/mol/K = (0.89*CPC + 20.6)*2 + DELCP1, Eqn 59 in Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(DELCP3)))
+                    eqs_used.append(&#34;CP3 = {} cal/mol/K = DELCP1 + CPC + CPL, standard isobaric heat capacity of the third complex&#34;.format(&#34;{0:.5g}&#34;.format(CP3)))
+                else:
+                    # ES note from original fortran code: CHANGED 17 MARCH 1992!!!
+                    gz = 0.89*CPC + 0.72*CPL + 16.3
+                    DELCP3 = DELCP2 + gz
+                    CP3 = DELCP3 + CP2 + CPL
+                    eqs_used.append(&#34;gz = {} = 0.89*CPC + 0.72*CPL + 16.3, unpublished equation pertaining to Haas et al 1995, Shock et al. 1995, and Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(gz)))
+                    eqs_used.append(&#34;DELCP3 = {} cal/mol/K = DELCP2 + gz, unpublished equation pertaining to Haas et al 1995, Shock et al. 1995, and Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(DELCP3)))
+                    eqs_used.append(&#34;CP3 = {} cal/mol/K = DELCP3 + CP2 + CPL, standard isobaric heat capacity of the second complex&#34;.format(&#34;{0:.5g}&#34;.format(CP3)))
+
+        if not math.isnan(V_3):
+            # if user provides a volume
+            V3 = V_3
+            DELVR3 = V3 - VC - VL
+            eqs_used.append(&#34;Volume of the complex V3 = {}, cation VC = {}, and ligand VL = {}, cal/mol/K&#34;.format(V3, VC, VL))
+            eqs_used.append(&#34;DELVR3 = {} cm3/mol = V3 - VC - VL, volume of association of the third complex&#34;.format(&#34;{0:.5g}&#34;.format(DELVR3)))
+        else:
+            if ligand == &#34;OH-&#34;:
+                if ZC == 1:
+                    # third complex of a monovalent cation is not supported
+                    V3 = float(&#34;NaN&#34;)
+                elif ZC == 2:
+                    if cation_element in transition_metals:
+                        V3 = 0.54*S3 - 4.8
+                        eqs_used.append(&#34;V3 = {} cm3/mol = 0.54*S3 - 4.8, see Table 9 in Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(V3)))
+                    elif cation_element in alkaline_earths:
+                        V3 = 0.25*S3 + 11.7
+                        eqs_used.append(&#34;V3 = {} cm3/mol = 0.25*S3 + 11.7, see Table 9 in Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(V3)))
+                    else:
+                        # cation element is not supported.
+                        V3 = float(&#39;NaN&#39;)
+                elif ZC == 3:
+                    if cation_element in first_row_transition_metals:
+                        V3 = 0.54*S3 - 4.8
+                        eqs_used.append(&#34;V3 = {} cm3/mol = 0.54*S3 - 4.8, see Table 9 in Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(V3)))
+                    else:
+                        V3 = 0.25*S3 + 11.7
+                        eqs_used.append(&#34;V3 = {} cm3/mol = 0.25*S3 + 11.7, see Table 9 in Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(V3)))
+                elif ZC == 4:
+                    V3 = 0.25*S3 + 11.7
+                    eqs_used.append(&#34;V3 = {} cm3/mol = 0.25*S3 + 11.7, see Table 9 in Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(V3)))
+                else:
+                    # cations with 5+ charge are not supported
+                    V3 = float(&#39;NaN&#39;)
+                    
+                DELVR3 = V3 - VC - (3.0*VL) + V_water_298K
+            else:
+                DELVR3  = 0.11419*V2 + 8.9432
+                V3 = DELVR3 + DELVR2 + DELVR1 + VC + (3.0*VL)
+                eqs_used.append(&#34;DELVR3 = {} cm3/mol = 0.11419*V2+ 8.9432, Eq. 62 in Sverjensky et al 1997&#34;.format(&#34;{0:.5g}&#34;.format(DELVR3)))
+                eqs_used.append(&#34;V3 = {} cm3/mol = DELVR3 + DELVR2 + DELVR1 + VC + (3.0*VL), standard volume of the third complex&#34;.format(&#34;{0:.5g}&#34;.format(V3)))
+
+    if not math.isnan(BETA4):
+        ##### Calculations for the fourth complex
+        eqs_used.append(&#34;Beginning calculations for the fourth complex...&#34;)
+        Z = Z + ZL
+        Z4 = Z
+
+        if not math.isnan(G_4):
+            G4 = G_4
+            DELGR4 = -G4 + GC + (4.0*GL)
+            eqs_used.append(&#34;G4 = {} cal/mol, standard Gibbs free energy of formation of the fourth complex&#34;.format(&#34;{0:.5g}&#34;.format(G4)))
+            eqs_used.append(&#34;DELGR4 = {} cal/mol = -G4 + GC + (4.0*GL), Gibbs free energy of association of the fourth complex&#34;.format(&#34;{0:.5g}&#34;.format(DELGR4)))
+        else:
+            DELGR4 = 2.30259*1.98719*298.15*BETA4
+            G4 = DELGR4 + GC + (4.0*GL)
+            eqs_used.append(&#34;DELGR4 = {} cal/mol = 2.30259*1.98719*298.15*BETA4, Gibbs free energy of association of the fourth complex&#34;.format(&#34;{0:.5g}&#34;.format(DELGR4)))
+            eqs_used.append(&#34;G4 = {} cal/mol = DELGR4 + GC + (4.0*GL), standard state partial molal Gibbs free energy of formation of the fourth complex&#34;.format(&#34;{0:.5g}&#34;.format(G4)))
+    
+        if ligand == &#34;OH-&#34;:
+            G4 = G4 - 2*G_water_298K
+            DELGR4 = G4 - GC - (4.0*GL) + 2*G_water_298K
+            # subtract the Gibbs free energy of 2 waters
+            eqs_used.append(&#34;G4 = {} cal/mol = G4 - 2*G_water_298K, subtract the standard Gibbs free energy of two H2O at 298.15K as per the convention outlined in Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(G4)))
+    
+        
+        # if sass4 is available, use it. If not, predict it.
+        if not math.isnan(sass4) or not math.isnan(S_4):
+            if math.isnan(S_4):
+                DELSR4 = sass4
+                DELS4 = DELSR4 - DELS1 - DELS2 - DELS3
+                S4 = SC + 4.0*SL + DELS1 + DELS2 + DELS3 + DELS4
+                eqs_used.append(&#34;Sass_4 = {} cal/mol/K, entropy of association of the third complex&#34;.format(sass4))
+                eqs_used.append(&#34;DELS4 = {} cal/mol/K = DELSR3 - DELS1 - DELS2, entropy of association of the fourth complex from the third complex&#34;.format(&#34;{0:.5g}&#34;.format(DELS4)))
+                eqs_used.append(&#34;S4 = {} cal/mol/K = SC + 4.0*SL + DELS1 + DELS2 + DELS3 + DELS4, standard state partial molal third law entropy of the third complex&#34;.format(&#34;{0:.5g}&#34;.format(S4)))
+    
+            else:
+                S4 = S_4
+                DELSR4 = S4 - SC - (4.0*SL)
+                DELS4 = DELSR4 - DELS1 - DELS2 - DELS3
+                eqs_used.append(&#34;Third law entropy of the fourth complex S4 = {}, cation SC = {}, and ligand SL = {}, cal/mol/K&#34;.format(S_4, SC, SL))
+                eqs_used.append(&#34;DELSR4 = {} cal/mol/K = S4 - SC - (4.0*SL), entropy of association of the third complex&#34;.format(&#34;{0:.5g}&#34;.format(DELSR4)))
+                eqs_used.append(&#34;DELS4 = {} cal/mol/K = DELSR3 - DELS1 - DELS2, entropy of association of the fourth complex from the third complex&#34;.format(&#34;{0:.5g}&#34;.format(DELS4)))
+            
+        else:
+            if ligand == &#34;OH-&#34;:
+                # correlation from Shock et al., 1997 for fourth hydroxide complexes (table 9)
+                eqs_used.append(&#34;Beginning standard entropy estimation for the fourth hydroxide complex according to Shock et al., 1997...&#34;)
+                if ZC == 1:
+                    # no support for a fourth complex for monovalent cations
+                    # todo: exit out here
+                    S4 = float(&#39;NaN&#39;)
+                elif ZC == 2:
+                    S4 = 1.62*SC + 11
+                    eqs_used.append(&#34;S4 = {} cal/K/mol = 1.62*SC + 11, Eqn for divalent cations from Table 9 of Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(S4)))
+                elif ZC == 3:
+                    S4 = 1.62*SC + 118
+                    eqs_used.append(&#34;S4 = {} cal/K/mol = 1.62*SC + 118, Eqn for trivalent cations from Table 9 of Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(S4)))
+                elif ZC == 4:
+                    S4 = 1.62*SC + 135
+                    eqs_used.append(&#34;S4 = {} cal/K/mol = 1.62*SC + 135, Eqn for tetravalent cations from Table 9 of Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(S4)))
+                else:
+                    # cation charges of 5+ are not supported but have already been weeded out...
+                    S4 = float(&#39;NaN&#39;)
+                
+                DELSR4 = S4 - SC - (4.0*SL) + 2*S_water_298K
+                DELS4 = DELSR4 - DELSR3 - DELSR2 - DELS1
+                eqs_used.append(&#34;DELSR4 = {} cal/mol/K = S4 - SC - (4.0*SL) + 2*S_water_298K, entropy of association of the fourth complex&#34;.format(&#34;{0:.5g}&#34;.format(DELSR4)))
+                eqs_used.append(&#34;DELS3 = {} cal/mol/K = DELSR4 - DELSR3 - DELSR2 - DELS1, entropy of association of the fourth complex from the third complex&#34;.format(&#34;{0:.5g}&#34;.format(DELS4)))
+            else:
+                # Eq 74-77 in Sverjensky et al 1997
+                AZ= 0.016241*Z - 0.000479
+                AZP= -0.36097*Z + 0.3209
+                BZ= 0.32102*Z  - 0.05996
+                BZP= 8.2198*Z - 1.557
+                ALPHA = AZ*(SL+(-5.0*ZL)) + AZP
+                BETA = BZ*(SL+(-5.0*ZL)) + BZP
+                DELS4 = ALPHA*(S3+(-5.0*(ZC+(3*ZL)))) + BETA
+                DELSR4= DELS1 + DELS2 + DELS3 + DELS4
+                S4 = DELSR4 + SC + (4.0*SL)
+                eqs_used.append(&#34;Calculating parameters to estimate the standard third law entropy of the fourth complex...&#34;)
+                eqs_used.append(&#34;AZ = {} = 0.016241*Z - 0.000479, Eqn 74 in Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(AZ)))
+                eqs_used.append(&#34;AZP = {} = -0.36097*Z + 0.3209, Eqn 75 in Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(AZP)))
+                eqs_used.append(&#34;BZ = {} = 0.32102*Z  - 0.05996, Eqn 76 in Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(BZ)))
+                eqs_used.append(&#34;BZP = {} = 8.2198*Z - 1.557, Eqn 77 in Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(BZP)))
+                eqs_used.append(&#34;ALPHA = {} = AZ*(SL+(-5.0*ZL)) + AZP, Eqn pertaining to Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(ALPHA)))
+                eqs_used.append(&#34;BETA = {} = BZ*(SL+(-5.0*ZL)) + BZP, Eqn pertaining to Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(BETA)))
+                eqs_used.append(&#34;DELS4 = {} cal/mol/K = ALPHA*(S3+(-5.0*(ZC+(3*ZL)))) + BETA, Eqn pertaining to Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(DELS4)))
+                eqs_used.append(&#34;DELSR4 = {} cal/mol/K = DELS1 + DELS2 + DELS3 + DELS4, entropy of association for the fourth complex (cal/mol/K)&#34;.format(&#34;{0:.5g}&#34;.format(DELSR4)))
+                eqs_used.append(&#34;S2 = {} cal/mol/K = DELSR2 + SC + (2.0*SL), standard third law entropy of the fourth complex&#34;.format(&#34;{0:.5g}&#34;.format(S4)))
+
+        if not math.isnan(H_4):
+            H4 = H_4
+            eqs_used.append(&#34;H4 = {} cal/mol, standard enthalpy of the fourth complex&#34;.format(&#34;{0:.5g}&#34;.format(H4)))
+        else:
+            DELHR4 = DELGR4 + (298.15*DELSR4)
+            H4 = DELHR4 + HC + (4.0*HL)
+            eqs_used.append(&#34;DELHR4 = {} cal/mol = DELGR4 + (298.15*DELSR4), enthalpy of the fourth association&#34;.format(&#34;{0:.5g}&#34;.format(DELHR4)))
+            eqs_used.append(&#34;H4 = {} cal/mol = DELHR4 + HC + (4.0*HL), standard enthalpy of the fourth complex&#34;.format(&#34;{0:.5g}&#34;.format(H4)))
+        
+        if ligand == &#34;OH-&#34;:
+            H4 = H4 - 2*H_water_298K
+            eqs_used.append(&#34;H4 = {} cal/mol = H4 - 2*H_water_298K, subtract the standard enthalpy of two H2O at 298.15K as per the convention outlined in Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(H4)))
+
+        if not math.isnan(Cp_4):
+            # if user provides a heat capacity
+            CP4 = Cp_4
+            DELCP4 = CP4 - CPC - CPL
+            eqs_used.append(&#34;Isobaric heat capacity of the complex CP4 = {}, cation CPC = {}, and ligand CPL = {}, cal/mol/K&#34;.format(Cp_4, CPC, CPL))
+            eqs_used.append(&#34;DELCP4 = {} cal/mol/K = CP4 - CPC - CPL, heat capacity of association of the fourth complex&#34;.format(&#34;{0:.5g}&#34;.format(DELCP4)))
+        else:
+            if ligand == &#34;OH-&#34;:
+                if ZC == 1:
+                    # fourth hydroxide complex of a monovalent cation is not supported
+                    CP4 = float(&#39;NaN&#39;)
+                elif ZC == 2:
+                    CP4 = -2.28*S4 - 106.2
+                    eqs_used.append(&#34;CP4 = {} cal/mol/K = 2.28*S4 - 106.2, Eqn for divalent cations from Table 9 of Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(CP4)))
+                elif ZC in [3,4]:
+                    CP4 = -2.06*S4 - 34.5
+                    eqs_used.append(&#34;CP4 = {} cal/mol/K = -2.06*S4 - 34.5, Eqn for tri- and tetravalent cations from Table 9 of Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(CP4)))
+                else:
+                    # cations with &gt;4 charge have been weeded out in entropy calculation already
+                    CP4 = float(&#39;NaN&#39;)
+                DELCPR4 = CP4 - CPC - (4.0*CPL)
+                DELCP4 = DELCPR4 - DELCPR3 - DELCPR2 - DELCP1
+            else:
+                if SSH97_cp_eqns and ligand == &#34;Cl-&#34;:
+                    # GB added 2024
+                    DELCP4 = (0.89*CPC - 4.9)*3 + DELCP1
+                    CP4 = DELCP4 + CP3 + CPL
+                    eqs_used.append(&#34;DELCP4 = {} cal/mol/K = (0.89*CPC - 4.9)*3 + DELCP1, Eqn 58 in Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(DELCP4)))
+                    eqs_used.append(&#34;CP4 = {} cal/mol/K = DELCP1 + CPC + CPL, standard isobaric heat capacity of the fourth complex&#34;.format(&#34;{0:.5g}&#34;.format(CP4)))
+                elif SSH97_cp_eqns and ligand == &#34;acetate&#34; and ZC == 2:
+                    # GB modified 2024 to add equations as they appear in Sverjensky et al., 1997:
+                    DELCP4 = (0.89*CPC + 20.6)*3 + DELCP1
+                    CP4 = DELCP4 + CP3 + CPL
+                    eqs_used.append(&#34;DELCP4 = (0.89*CPC + 20.6)*3 + DELCP1, Eqn 59 in Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(DELCP4)))
+                    eqs_used.append(&#34;CP4 = {} cal/mol/K = DELCP4 + CP3 + CPL, standard isobaric heat capacity of the fourth complex&#34;.format(&#34;{0:.5g}&#34;.format(CP4)))
+                else:
+                    # ES note from original fortran code: CHANGED 17 MARCH 1992!!!
+                    gz = 0.89*CPC + 0.72*CPL + 16.3
+                    DELCP4 = DELCP3 + gz
+                    CP4 = DELCP4 + CP3 + CPL
+                    eqs_used.append(&#34;gz = {} = 0.89*CPC + 0.72*CPL + 16.3, unpublished equation pertaining to Haas et al 1995, Shock et al. 1995, and Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(gz)))
+                    eqs_used.append(&#34;DELCP4 = {} cal/mol/K = DELCP3 + gz, unpublished equation pertaining to Haas et al 1995, Shock et al. 1995, and Sverjensky et al. 1997&#34;.format(&#34;{0:.5g}&#34;.format(DELCP4)))
+                    eqs_used.append(&#34;CP4 = {} cal/mol/K = DELCP4 + CP3 + CPL, standard isobaric heat capacity of the fourth complex&#34;.format(&#34;{0:.5g}&#34;.format(CP4)))
+        
+        if not math.isnan(V_4):
+            # if user provides a volume
+            V4 = V_4
+            DELVR4 = V4 - VC - VL
+            eqs_used.append(&#34;Volume of the complex V4 = {}, cation VC = {}, and ligand VL = {}, cal/mol/K&#34;.format(V4, VC, VL))
+            eqs_used.append(&#34;DELVR4 = {} cm3/mol = V4 - VC - VL, volume of association of the fourth complex&#34;.format(&#34;{0:.5g}&#34;.format(DELVR4)))
+        else:
+            if ligand == &#34;OH-&#34;:
+                if ZC == 1:
+                    # fourth complex of a monovalent cation is not supported
+                    V4 = float(&#39;NaN&#39;)
+                elif ZC == 2:
+                    if cation_element in transition_metals:
+                        V4 = 0.54*S4 - 4.8
+                        eqs_used.append(&#34;V4 = {} cm3/mol = 0.54*S4 - 4.8, see Table 9 in Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(V4)))
+                    elif cation_element in alkaline_earths:
+                        V4 = 0.25*S4 + 11.7
+                        eqs_used.append(&#34;V4 = {} cm3/mol = 0.25*S4 + 11.7, see Table 9 in Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(V4)))
+                    else:
+                        # cation element is not supported.
+                        V4 = float(&#39;NaN&#39;)
+                elif ZC == 3:
+                    if cation_element in first_row_transition_metals:
+                        V4 = 0.54*S4 - 4.8
+                        eqs_used.append(&#34;V4 = {} cm3/mol = 0.54*S4 - 4.8, see Table 9 in Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(V4)))
+                    else:
+                        V4 = 0.25*S4 + 11.7
+                        eqs_used.append(&#34;V4 = {} cm3/mol = 0.25*S4 + 11.7, see Table 9 in Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(V4)))
+                elif ZC == 4:
+                    V4 = 0.25*S4 + 11.7
+                    eqs_used.append(&#34;V4 = {} cm3/mol = 0.25*S4 + 11.7, see Table 9 in Shock et al., 1997&#34;.format(&#34;{0:.5g}&#34;.format(V4)))
+                else:
+                    # cations with 5+ charge are not supported
+                    V4 = float(&#39;NaN&#39;)
+                    
+                DELVR4 = V4 - VC - (4.0*VL) + 2*V_water_298K
+            else:
+                DELVR4  = 0.11419*V3 + 8.9432 # Eq. 62 in Sverjensky et al 1997
+                V4 = DELVR4 + DELVR3 + DELVR2 + DELVR1 + VC + (4.0*VL)
+                eqs_used.append(&#34;DELVR4 = {} cm3/mol = 0.11419*V3 + 8.9432, Eq. 62 in Sverjensky et al 1997&#34;.format(&#34;{0:.5g}&#34;.format(DELVR4)))
+                eqs_used.append(&#34;V4 = {} cm3/mol = DELVR4 + DELVR3 + DELVR2 + DELVR1 + VC + (4.0*VL), standard volume of the fourth complex&#34;.format(&#34;{0:.5g}&#34;.format(V4)))
+        
+        # override properties and parameters if they are supplied by the user
+        if not math.isnan(G_1):
+            G1 = G_1
+        if not math.isnan(H_1):
+            H1 = H_1
+        if not math.isnan(S_1):
+            S1 = S_1
+        if not math.isnan(Cp_1):
+            CP1 = Cp_1
+        if not math.isnan(V_1):
+            V1 = V_1
+        
+    if metal_organic_complex:
+        organic=True
+    else:
+        organic=False
+    
+    if not math.isnan(BETA1):
+
+        try:
+            eqs_used.append(&#34;Estimating HKF parameters for the first complex...&#34;)
+            G, H, S, a1, a2, a3, a4, c1, c2, wcon, hkf_eqns_1 = calc_params(Z1, G1, H1, S1, CP1, V1, a1_1, a2_1, a3_1, a4_1, c1_1, c2_1, omega_1, water_model=water_model, organic=organic)
+            eqs_used.append(&#34;HKF parameters for the first complex were estimated...&#34;)
+        except:
+            eqs_used.append(&#34;HKF parameters for the first complex could not be estimated...&#34;)
+            return pd.DataFrame(), eqs_used, warning_list, duplicate_list
+
+        if not math.isnan(G):
+            if sigfigs:
+                G_out = sf(G, min(GC_sf, GL_sf))
+                H_out = sf(H, min(HC_sf, HL_sf))
+                S_out = sf(S, min(SC_sf, SL_sf))
+                CP_out = sf(CP1, min(CPC_sf, CPL_sf))
+                V_out = sf(V1, min(VC_sf, VL_sf))
+                a1_out = sf(a1*10, min(VC_sf, VL_sf))
+                a2_out = sf(a2/100, min(VC_sf, VL_sf))
+                a3_out = sf(a3, min(VC_sf, VL_sf))
+                a4_out = sf(a4/10000, min(VC_sf, VL_sf))
+                c1_out = sf(c1, min(CPC_sf, CPL_sf))
+                c2_out = sf(c2/10000, min(CPC_sf, CPL_sf))
+                wcon_out = sf(wcon/100000, min(SC_sf, SL_sf))
+            else:
+                G_out = round(G, rt)
+                H_out = round(H, rt)
+                S_out = round(S, rt)
+                CP_out = round(CP1, rt)
+                V_out = round(V1, rt)
+                a1_out = round(a1*10, rt)
+                a2_out = round(a2/100, rt)
+                a3_out = round(a3, rt)
+                a4_out = round(a4/10000, rt)
+                c1_out = round(c1, rt)
+                c2_out = round(c2/10000, rt)
+                wcon_out = round(wcon/100000, rt)
+            Z_out = Z1
+
+            df_out_1, duplicate_list_1 = __write_output(filename=out_name,
+                         cation=cation, ligand=ligand, nth_complex=1, G=G_out, H=H_out, S=S_out,
+                         CP=CP_out, V=V_out, a1=a1_out, a2=a2_out, a3=a3_out, a4=a4_out, c1=c1_out, c2=c2_out,
+                         wcon=wcon_out, Z=Z_out, azero=azero,
+                         cation_dissrxn_dict=cation_dissrxn_dict,
+                         ligand_dissrxn_dict=ligand_dissrxn_dict,
+                         thermo_data=thermo_data,
+                         cation_formula_ox_dict=cation_formula_ox_dict,
+                         ligand_formula_ox_dict=ligand_formula_ox_dict,
+                         skip_duplicates=skip_duplicates,
+                         ligand_name_abbrv_pairs=ligand_name_abbrv_pairs,
+                         organic=organic)
+
+        eqs_used = eqs_used + hkf_eqns_1
+        duplicate_list = duplicate_list + duplicate_list_1
+    
+    # override properties and parameters if they are supplied by the user
+    if not math.isnan(G_2):
+        G2 = G_2
+    if not math.isnan(H_2):
+        H2 = H_2
+    if not math.isnan(S_2):
+        S2 = S_2
+    if not math.isnan(Cp_2):
+        CP2 = Cp_2
+    if not math.isnan(V_2):
+        V2 = V_2
+    
+    if not math.isnan(BETA2):
+        try:
+            eqs_used.append(&#34;Estimating HKF parameters for the second complex...&#34;)
+            G, H, S, a1, a2, a3, a4, c1, c2, wcon, hkf_eqns_2 = calc_params(Z2, G2, H2, S2, CP2, V2, a1_2, a2_2, a3_2, a4_2, c1_2, c2_2, omega_2, water_model=water_model, organic=organic)
+            eqs_used.append(&#34;HKF parameters for the second complex were estimated...&#34;)
+        except:
+            eqs_used.append(&#34;HKF parameters for the second complex could not be estimated...&#34;)
+            return pd.DataFrame(), eqs_used, warning_list, duplicate_list
+
+        if not math.isnan(G):
+            if sigfigs:
+                G_out = sf(G, min(GC_sf, GL_sf))
+                H_out = sf(H, min(HC_sf, HL_sf))
+                S_out = sf(S, min(SC_sf, SL_sf))
+                CP_out = sf(CP1, min(CPC_sf, CPL_sf))
+                V_out = sf(V1, min(VC_sf, VL_sf))
+                a1_out = sf(a1*10, min(VC_sf, VL_sf))
+                a2_out = sf(a2/100, min(VC_sf, VL_sf))
+                a3_out = sf(a3, min(VC_sf, VL_sf))
+                a4_out = sf(a4/10000, min(VC_sf, VL_sf))
+                c1_out = sf(c1, min(CPC_sf, CPL_sf))
+                c2_out = sf(c2/10000, min(CPC_sf, CPL_sf))
+                wcon_out = sf(wcon/100000, min(SC_sf, SL_sf))
+            else:
+                G_out = round(G, rt)
+                H_out = round(H, rt)
+                S_out = round(S, rt)
+                CP_out = round(CP2, rt)
+                V_out = round(V2, rt)
+                a1_out = round(a1*10, rt)
+                a2_out = round(a2/100, rt)
+                a3_out = round(a3, rt)
+                a4_out = round(a4/10000, rt)
+                c1_out = round(c1, rt)
+                c2_out = round(c2/10000, rt)
+                wcon_out = round(wcon/100000, rt)
+            Z_out = Z2
+        
+            df_out_2, duplicate_list_2 = __write_output(filename=out_name,
+                         cation=cation,
+                         ligand=ligand, nth_complex=2,
+                         G=G_out, H=H_out, S=S_out,
+                         CP=CP_out, V=V_out, a1=a1_out,
+                         a2=a2_out, a3=a3_out, a4=a4_out,
+                         c1=c1_out, c2=c2_out,
+                         wcon=wcon_out, Z=Z_out, azero=azero,
+                         cation_dissrxn_dict=cation_dissrxn_dict,
+                         ligand_dissrxn_dict=ligand_dissrxn_dict,
+                         thermo_data=thermo_data,
+                         cation_formula_ox_dict=cation_formula_ox_dict,
+                         ligand_formula_ox_dict=ligand_formula_ox_dict,
+                         skip_duplicates=skip_duplicates,
+                         ligand_name_abbrv_pairs=ligand_name_abbrv_pairs,
+                         organic=organic)
+
+        eqs_used = eqs_used + hkf_eqns_2
+        duplicate_list = duplicate_list + duplicate_list_2
+    
+    # override properties and parameters if they are supplied by the user
+    if not math.isnan(G_3):
+        G3 = G_3
+    if not math.isnan(H_3):
+        H3 = H_3
+    if not math.isnan(S_3):
+        S3 = S_3
+    if not math.isnan(Cp_3):
+        CP3 = Cp_3
+    if not math.isnan(V_3):
+        V3 = V_3
+    
+    if not math.isnan(BETA3):
+        try:
+            eqs_used.append(&#34;Estimating HKF parameters for the third complex...&#34;)
+            G, H, S, a1, a2, a3, a4, c1, c2, wcon, hkf_eqns_3 = calc_params(Z3, G3, H3, S3, CP3, V3, a1_3, a2_3, a3_3, a4_3, c1_3, c2_3, omega_3, water_model=water_model, organic=organic)
+            eqs_used.append(&#34;HKF parameters for the third complex were estimated...&#34;)
+        except:
+            eqs_used.append(&#34;HKF parameters for the third complex could not be estimated...&#34;)
+            return pd.DataFrame(), eqs_used, warning_list, duplicate_list
+        
+        if not math.isnan(G):
+            if sigfigs:
+                G_out = sf(G, min(GC_sf, GL_sf))
+                H_out = sf(H, min(HC_sf, HL_sf))
+                S_out = sf(S, min(SC_sf, SL_sf))
+                CP_out = sf(CP1, min(CPC_sf, CPL_sf))
+                V_out = sf(V1, min(VC_sf, VL_sf))
+                a1_out = sf(a1*10, min(VC_sf, VL_sf))
+                a2_out = sf(a2/100, min(VC_sf, VL_sf))
+                a3_out = sf(a3, min(VC_sf, VL_sf))
+                a4_out = sf(a4/10000, min(VC_sf, VL_sf))
+                c1_out = sf(c1, min(CPC_sf, CPL_sf))
+                c2_out = sf(c2/10000, min(CPC_sf, CPL_sf))
+                wcon_out = sf(wcon/100000, min(SC_sf, SL_sf))
+            else:
+                G_out = round(G, rt)
+                H_out = round(H, rt)
+                S_out = round(S, rt)
+                CP_out = round(CP3, rt)
+                V_out = round(V3, rt)
+                a1_out = round(a1*10, rt)
+                a2_out = round(a2/100, rt)
+                a3_out = round(a3, rt)
+                a4_out = round(a4/10000, rt)
+                c1_out = round(c1, rt)
+                c2_out = round(c2/10000, rt)
+                wcon_out = round(wcon/100000, rt)
+            Z_out = Z3
+
+            df_out_3, duplicate_list_3 = __write_output(filename=out_name,
+                         cation=cation,
+                         ligand=ligand, nth_complex=3,
+                         G=G_out, H=H_out, S=S_out,
+                         CP=CP_out, V=V_out, a1=a1_out,
+                         a2=a2_out, a3=a3_out, a4=a4_out,
+                         c1=c1_out, c2=c2_out,
+                         wcon=wcon_out, Z=Z_out, azero=azero,
+                         cation_dissrxn_dict=cation_dissrxn_dict,
+                         ligand_dissrxn_dict=ligand_dissrxn_dict,
+                         thermo_data=thermo_data,
+                         cation_formula_ox_dict=cation_formula_ox_dict,
+                         ligand_formula_ox_dict=ligand_formula_ox_dict,
+                         skip_duplicates=skip_duplicates,
+                         ligand_name_abbrv_pairs=ligand_name_abbrv_pairs,
+                         organic=organic)
+
+        eqs_used = eqs_used + hkf_eqns_3
+        duplicate_list = duplicate_list + duplicate_list_3
+    
+    # override properties and parameters if they are supplied by the user
+    if not math.isnan(G_4):
+        G4 = G_4
+    if not math.isnan(H_4):
+        H4 = H_4
+    if not math.isnan(S_4):
+        S4 = S_4
+    if not math.isnan(Cp_4):
+        CP4 = Cp_4
+    if not math.isnan(V_4):
+        V4 = V_4
+
+    if not math.isnan(BETA4):
+        try:
+            eqs_used.append(&#34;Estimating HKF parameters for the fourth complex...&#34;)
+            G, H, S, a1, a2, a3, a4, c1, c2, wcon, hkf_eqns_4 = calc_params(Z4, G4, H4, S4, CP4, V4, a1_4, a2_4, a3_4, a4_4, c1_4, c2_4, omega, water_model=water_model, organic=organic)
+            eqs_used.append(&#34;HKF parameters for the fourth complex were estimated...&#34;)
+        except:
+            eqs_used.append(&#34;HKF parameters for the fourth complex could not be estimated...&#34;)
+            return pd.DataFrame(), eqs_used, warning_list, duplicate_list
+
+        if not math.isnan(G):
+            if sigfigs:
+                G_out = sf(G, min(GC_sf, GL_sf))
+                H_out = sf(H, min(HC_sf, HL_sf))
+                S_out = sf(S, min(SC_sf, SL_sf))
+                CP_out = sf(CP1, min(CPC_sf, CPL_sf))
+                V_out = sf(V1, min(VC_sf, VL_sf))
+                a1_out = sf(a1*10, min(VC_sf, VL_sf))
+                a2_out = sf(a2/100, min(VC_sf, VL_sf))
+                a3_out = sf(a3, min(VC_sf, VL_sf))
+                a4_out = sf(a4/10000, min(VC_sf, VL_sf))
+                c1_out = sf(c1, min(CPC_sf, CPL_sf))
+                c2_out = sf(c2/10000, min(CPC_sf, CPL_sf))
+                wcon_out = sf(wcon/100000, min(SC_sf, SL_sf))
+            else:
+                G_out = round(G, rt)
+                H_out = round(H, rt)
+                S_out = round(S, rt)
+                CP_out = round(CP4, rt)
+                V_out = round(V4, rt)
+                a1_out = round(a1*10, rt)
+                a2_out = round(a2/100, rt)
+                a3_out = round(a3, rt)
+                a4_out = round(a4/10000, rt)
+                c1_out = round(c1, rt)
+                c2_out = round(c2/10000, rt)
+                wcon_out = round(wcon/100000, rt)
+            Z_out = Z4
+            
+            df_out_4, duplicate_list_4 = __write_output(filename=out_name,
+                         cation=cation,
+                         ligand=ligand, nth_complex=4,
+                         G=G_out, H=H_out, S=S_out,
+                         CP=CP_out, V=V_out, a1=a1_out,
+                         a2=a2_out, a3=a3_out, a4=a4_out,
+                         c1=c1_out, c2=c2_out,
+                         wcon=wcon_out, Z=Z_out, azero=azero,
+                         cation_dissrxn_dict=cation_dissrxn_dict,
+                         ligand_dissrxn_dict=ligand_dissrxn_dict,
+                         thermo_data=thermo_data,
+                         cation_formula_ox_dict=cation_formula_ox_dict,
+                         ligand_formula_ox_dict=ligand_formula_ox_dict,
+                         skip_duplicates=skip_duplicates,
+                         ligand_name_abbrv_pairs=ligand_name_abbrv_pairs,
+                         organic=organic)
+
+
+        eqs_used = eqs_used + hkf_eqns_4
+        duplicate_list = duplicate_list + duplicate_list_4
+    
+    df_out = pd.concat([df_out_1, df_out_2, df_out_3, df_out_4], ignore_index=True)
+    
+    if len(duplicate_list) &gt; 0:
+        
+        msg = (&#34;Certain complexes that have just been estimated with the &#34;
+               &#34;Complicator are likely duplicates of complexes that are already &#34;
+               &#34;in the thermodynamic database. Set skip_duplicates=True &#34;
+               &#34;and rerun to skip and exclude these complexes.&#34;)
+        warning_list.append(msg)
+
+        for dup_pair in duplicate_list:
+            complex_name = dup_pair[0]
+            complex_name_no_parentheses = dup_pair[1]
+            
+            warning_list.append(complex_name + &#34; appears to be a duplicate of &#34; + complex_name_no_parentheses + &#34; already present in the thermodynamic database.&#34;)
+
+    return df_out, eqs_used, warning_list, duplicate_list</code></pre>
+</details>
+<div class="desc"><p>Estimate the thermodynamic properties and Helgeson-Kirkham-Flowers (HKF)
+equation of state parameters for aqueous inorganic complexes.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>cation</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the cation in the aqueous complex.</dd>
+<dt><strong><code>ligand</code></strong> :&ensp;<code>str</code></dt>
+<dd>Name of the ligand in the aqueous complex.</dd>
+<dt><strong><code>beta</code></strong> :&ensp;<code>list</code> of <code>float</code></dt>
+<dd>List of four association equilibrium constants for the first, second,
+third, and fourth association, respectively. The first value should
+correspond to the equilibrium constant of a reaction like this:
+Mg+2 + Cl- = MgCl+
+While the second should represent a reaction written like this:
+Mg+2 + 2Cl- = MgCl2
+And so on, up to the fourth association.</dd>
+<dt><strong><code>sass</code></strong> :&ensp;<code>list</code> of <code>float</code>, optional</dt>
+<dd>List of four entropies of association (in cal mol-1 K-1) for the first,
+second, third, and fourth aqueous complex, respectively. If one or more
+values are not provided, they will be estimated from the properties of
+the cation, ligand, and association constants. The first entropy of
+association would be for a reaction like this:
+Mg+2 + Cl- = MgCl+
+While the second would be for a reaction written like this:
+Mg+2 + 2Cl- = MgCl2
+And so on, up to the fourth association.</dd>
+<dt><strong><code>out_name</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>Name of the CSV file in which results should be exported. If out_name is
+not specified, a file will not be written</dd>
+<dt><strong><code>G</code></strong> :&ensp;<code>list</code> of <code>numeric</code>, optional</dt>
+<dd>List of four partial molal Gibbs free energies of formation (in cal
+mol-1) corresponding to the aqueous complex formed by the first, second,
+third, and fourth association. If values are not provided, they will be
+estimated from the properties of the cation, ligand, and association
+constants.</dd>
+<dt><strong><code>H</code></strong> :&ensp;<code>list</code> of <code>numeric</code>, optional</dt>
+<dd>List of four partial molal enthalpies of formation (in cal
+mol-1) corresponding to the aqueous complex formed by the first, second,
+third, and fourth association. If values are not provided, they will be
+estimated from the properties of the cation, ligand, and association
+constants.</dd>
+<dt><strong><code>Cp</code></strong> :&ensp;<code>list</code> of <code>float</code>, optional</dt>
+<dd>List of four partial molal isobaric heat capacities (in cal mol-1 K-1)
+corresponding to the aqueous complex formed by the first, second, third,
+and fourth association. If values are not provided, they will be
+estimated from the properties of the cation and ligand.</dd>
+<dt><strong><code>V</code></strong> :&ensp;<code>list</code> of <code>float</code>, optional</dt>
+<dd>List of four partial molal volumes (in cm3 mol-1) corresponding to the
+aqueous complex formed by the first, second, third, and fourth
+association. If values are not provided, they will be estimated from the
+properties of the cation and ligand.</dd>
+<dt><strong><code>a1</code></strong>, <strong><code>a2</code></strong>, <strong><code>a3</code></strong>, <strong><code>a4</code></strong>, <strong><code>c1</code></strong>, <strong><code>c2</code></strong>, <strong><code>omega</code></strong> :&ensp;<code>list</code> of <code>float</code>, optional</dt>
+<dd>Parameters for the revised Helgeson Kirkam Flowers
+equation of state. The user may provide a list of four values
+corresponding to the aqueous complex formed by the first, second, third,
+and fourth association. If values are not provided, they will be
+estimated using published correlation methods.</dd>
+<dt><strong><code>azero</code></strong> :&ensp;<code>float</code>, default <code>4</code></dt>
+<dd>Aqueous species hard core diameter, a parameter in the Debeye-Hückel
+B-dot equation (Helgeson 1969) used to calculate activity coefficients.
+Units are in angstroms.</dd>
+<dt><strong><code>rt</code></strong> :&ensp;<code>int</code>, default <code>3</code></dt>
+<dd>Round output values to how many decimal places? Ignored if <code>sigfigs</code> is
+True.</dd>
+<dt><strong><code>sigfigs</code></strong> :&ensp;<code>bool</code>, default <code>False</code></dt>
+<dd>Experimental. Round output values to a number of significant figures
+determined by number of significant figures in values used to make the
+estimation?</dd>
+<dt><strong><code>df_in</code></strong> :&ensp;<code>pandas.DataFrame</code> or <code>filename str</code>, optional</dt>
+<dd>
+<p>A dataframe containing columns for "Metal", "Ligand", "BETA_1", "BETA_2",
+"BETA_3", "BETA_4", "S_1", "S_2", "S_3", "S_4". If a dataframe is
+provided to this parameter, thermodynamic estimates will be created for
+the metal-ligand complex given on each row.</p>
+<p>Alternatively, the name of a CSV file can be specified that will be
+loaded as a dataframe.</p>
+</dd>
+<dt><strong><code>data_path</code></strong> :&ensp;<code>str</code>, optional</dt>
+<dd>File path and name of a custom thermodynamic database CSV. If undefined,
+the default WORM database will be used.</dd>
+<dt><strong><code>water_model</code></strong> :&ensp;<code>str</code>, default <code>"SUPCRT92"</code></dt>
+<dd>Can be either "SUPCRT92" or "DEW" (Deep Earth Water) model. Influences
+the compatibility of estimated aqueous complex equation of state
+parameters for the chosen water model. If "DEW" is selected, the a1
+parameter is estimated according to Eq 16 in Sverjensky et al 2014
+(<a href="https://doi.org/10.1016/j.gca.2013.12.019">https://doi.org/10.1016/j.gca.2013.12.019</a>)</dd>
+<dt><strong><code>correct_basis</code></strong> :&ensp;<code>bool</code>, default <code>True</code></dt>
+<dd>If a cation or ligand is not a strict or auxiliary basis species in the
+thermodynamic database, ensure the dissociation reaction of the
+resulting complex includes only basis species? The default is True
+because complexes that are sent to aqueous equilibration package AqEquil
+require dissociation reactions into strict or auxiliary basis species.</dd>
+<dt><strong><code>skip_duplicates</code></strong> :&ensp;<code>bool</code>, default <code>True</code></dt>
+<dd>Detect whether a complex with a monovalent ligand is already in the
+thermodynamic database without parentheses. E.g., if "Ca(HCO3)+" is being
+added, check that a species named "CaHCO3+" isn't already in the database.
+If set to False, the species will be added anyway, but the user will
+be warned. If set to True, the species will not be added.</dd>
+<dt><strong><code>print_warnings</code></strong> :&ensp;<code>bool</code>, default <code>True</code></dt>
+<dd>Print Complicator warnings?</dd>
+<dt><strong><code>SSH97_cp_eqns</code></strong> :&ensp;<code>bool</code>, default <code>False</code></dt>
+<dd>Use equations given in Sverjensky et al. 1997 for estimating heat
+capacities of chloride complexes, or of acetate complexes with divalent
+cations? If False, the Complicator will use a built-in equations to
+estimate complex heat capacities. These equations can be viewed in the
+"equations" output of the complicator.</dd>
+<dt><strong><code>focus_on</code></strong> :&ensp;<code>list</code> of <code>str</code>, optional</dt>
+<dd>Allows the user to provide a list of metal or ligand names. The
+Complicator will only make estimates for complexes that contain those
+metals or ligands.</dd>
+<dt><strong><code>metal_organic_complex</code></strong> :&ensp;<code>bool</code>, default <code>False</code></dt>
+<dd>Is this a metal-organic complex? If True, estimation assumptions from
+Prapaipong and Shock (2001) will be used.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><strong><code>df_out</code></strong> :&ensp;<code>pandas dataframe</code></dt>
+<dd>A dataframe with estimated properties and HKF parameters of the aqueous
+complex.</dd>
+<dt><strong><code>equations</code></strong> :&ensp;<code>dict</code></dt>
+<dd>A dictionary organizing equations that were used to estimate the
+thermodynamic properties and parameters of aqueous complexes.</dd>
+<dt><strong><code>warnings</code></strong> :&ensp;<code>list</code></dt>
+<dd>A list of warnings that were encountered.</dd>
+<dt><strong><code>duplicates</code></strong> :&ensp;<code>list</code></dt>
+<dd>A list of estimated complexes that appear to match existing complexes in
+the thermodynamic database, reported as duplicate pairs, e.g.,
+[["Mg(OH)+", "MgOH+"], &hellip;].</dd>
+</dl></div>
+</dd>
+<dt id="complicator.autopp93s4.find_sigfigs"><code class="name flex">
+<span>def <span class="ident">find_sigfigs</span></span>(<span>number_string)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def find_sigfigs(number_string):
+    &#34;&#34;&#34;
+    Count significant figures (cannot handle scientific notation)
+    &#34;&#34;&#34;
+    
+    if isinstance(number_string, float):
+        return &#34;&#34;
+
+    if &#34;-&#34; in number_string:
+        # delete negative symbol
+        number_string = number_string.replace(&#34;-&#34;, &#34;&#34;)
+    
+    if &#34;.&#34; in number_string:
+        # delete decimal point
+        number_string = number_string.replace(&#34;.&#34;, &#34;&#34;)
+        # delete leading zeros
+        number_string = number_string.lstrip(&#34;0&#34;)
+    else:
+        # delete leading and trailing zeros
+        number_string = number_string.strip(&#34;0&#34;)
+
+    return len(number_string)</code></pre>
+</details>
+<div class="desc"><p>Count significant figures (cannot handle scientific notation)</p></div>
+</dd>
+<dt id="complicator.autopp93s4.sf"><code class="name flex">
+<span>def <span class="ident">sf</span></span>(<span>val, sf)</span>
+</code></dt>
+<dd>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def sf(val, sf):
+    val = &#34;{0:.{prec}g}&#34;.format(val, prec=sf)
+    if &#34;e&#34; in val and abs(float(val)) &gt;= 1:
+        val = str(int(float(val)))
+    elif &#34;e&#34; not in val and abs(float(val)) &lt; 1:
+        val = val + &#34;0&#34;*(sf - find_sigfigs(val))
+    elif &#34;e&#34; in val and abs(float(val)) &lt; 1:
+        val = &#34;{0:.{prec}f}&#34;.format(float(val), prec=20) # add arbitrarily high trailing zeros
+        val = re.sub(&#34;0+$&#34;, &#34;&#34;, val) # trim off all trailing zeros
+        val = val + &#34;0&#34;*(sf - find_sigfigs(val)) # add back correct number of trailing zeros
+    return val</code></pre>
+</details>
+<div class="desc"></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="complicator" href="index.html">complicator</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="complicator.autopp93s4.calc_params" href="#complicator.autopp93s4.calc_params">calc_params</a></code></li>
+<li><code><a title="complicator.autopp93s4.complicate" href="#complicator.autopp93s4.complicate">complicate</a></code></li>
+<li><code><a title="complicator.autopp93s4.find_sigfigs" href="#complicator.autopp93s4.find_sigfigs">find_sigfigs</a></code></li>
+<li><code><a title="complicator.autopp93s4.sf" href="#complicator.autopp93s4.sf">sf</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.6</a>.</p>
+</footer>
+</body>
+</html>
