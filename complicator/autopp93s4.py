@@ -50,7 +50,7 @@ def __write_output(filename, cation, ligand, nth_complex, G, H, S, CP, V,
                    a1, a2, a3, a4, c1, c2, wcon, Z, azero,
                    cation_dissrxn_dict, ligand_dissrxn_dict, thermo_data,
                    cation_formula_ox_dict, ligand_formula_ox_dict,
-                   skip_duplicates, ligand_name_abbrv_pairs, organic):
+                   skip_duplicates, ligand_name_abbrv_pairs, organic, name_suffix=None):
     """
     Write output to a CSV.
     """
@@ -88,31 +88,39 @@ def __write_output(filename, cation, ligand, nth_complex, G, H, S, CP, V,
     else:
         ligand_subscript = str(nth_complex)
     
-    this_date = datetime.today().strftime('%Y%m%d') 
+    this_date = datetime.today().strftime('%Y%m%d')
 
-    complex_name = cat_nocharge + "(" + lig_nocharge + ")" + ligand_subscript + this_charge
+    # Generate the auto-name for the complex
+    complex_name_auto = cat_nocharge + "(" + lig_nocharge + ")" + ligand_subscript + this_charge
     complex_formula_ox = ""
-    
-    if ligand == "OH-":
 
-        if "(OH)2" in complex_name:
-            complex_name = complex_name.replace("(OH)2", "(O)")
+    # Apply OH- special naming
+    if ligand == "OH-":
+        if "(OH)2" in complex_name_auto:
+            complex_name_auto = complex_name_auto.replace("(OH)2", "(O)")
             complex_formula_ox = cat_formula + " O-2"
             ligand_dissrxn_dict = {"H+": -2, "H2O": 1}
-        elif "(OH)3" in complex_name:
-            complex_name = "H" + cat_nocharge + "(O)2" + this_charge
+        elif "(OH)3" in complex_name_auto:
+            complex_name_auto = "H" + cat_nocharge + "(O)2" + this_charge
             complex_formula_ox = cat_formula + " H+ 2O-2"
             ligand_dissrxn_dict = {"H+": -3, "H2O": 2}
-        elif "(OH)4" in complex_name:
-            complex_name = cat_nocharge + "(O)2" + this_charge
+        elif "(OH)4" in complex_name_auto:
+            complex_name_auto = cat_nocharge + "(O)2" + this_charge
             complex_formula_ox = cat_formula + " 2O-2"
             ligand_dissrxn_dict = {"H+": -4, "H2O": 2}
 
-        complex_abbrv = complex_name
-        complex_formula = complex_name
+        complex_abbrv = complex_name_auto
+        complex_formula = complex_name_auto
     else:
         complex_abbrv = cat_nocharge + "(" + lig_nocharge + ")" + ligand_subscript + this_charge
         complex_formula = cat_formula_nocharge + "(" + lig_formula_nocharge + ")" + ligand_subscript + this_charge
+
+    # For the "name" column: use auto-generated name + suffix if provided
+    # For "abbrv" and "formula" columns: always use auto-generated names
+    if name_suffix is not None:
+        complex_name = complex_name_auto + name_suffix
+    else:
+        complex_name = complex_name_auto
 
     
     cation_dissrxn_dict_coeff = {name:coeff*1 for name, coeff in cation_dissrxn_dict.items()} # future: "1" can be replaced with number of cations
@@ -189,7 +197,7 @@ def __write_output(filename, cation, ligand, nth_complex, G, H, S, CP, V,
         
         if file_exists:
             with open(filename+'.csv', 'a') as f:
-    
+
                 f_df = pd.read_csv(filename+'.csv')
                 
                 # check that a monoligand complex without parentheses isn't already
@@ -294,7 +302,8 @@ def complicate(cation=None, ligand=None, beta=None, sass=None, out_name=None,
                c1=None, c2=None, omega=None, azero=4, rt=3, sigfigs=False, df_in=None,
                data_path=None, ligand_abbrv_data_path=None, water_model="SUPCRT92",
                correct_basis=True, skip_duplicates=True, print_warnings=True,
-               SSH97_cp_eqns=False, focus_on=None, metal_organic_complex=False):
+               SSH97_cp_eqns=False, focus_on=None, metal_organic_complex=False,
+               name_suffix_1=None, name_suffix_2=None, name_suffix_3=None, name_suffix_4=None):
     
     """
     Estimate the thermodynamic properties and Helgeson-Kirkham-Flowers (HKF)
@@ -567,6 +576,20 @@ def complicate(cation=None, ligand=None, beta=None, sass=None, out_name=None,
             c2_4 = complicator_check_assign("c2_4", row)
             omega_4 = complicator_check_assign("omega_4", row)
 
+            # Extract custom name suffixes for each complex if provided (strings, not floats)
+            def get_custom_suffix(prop, row):
+                if prop in row.index:
+                    val = row[prop]
+                    # If it's a string, use it; if it's NaN or missing, return None
+                    if isinstance(val, str) and val.strip():
+                        return val
+                return None
+
+            name_suffix_1 = get_custom_suffix("name_suffix_1", row)
+            name_suffix_2 = get_custom_suffix("name_suffix_2", row)
+            name_suffix_3 = get_custom_suffix("name_suffix_3", row)
+            name_suffix_4 = get_custom_suffix("name_suffix_4", row)
+
             a1_1 = a1_1/10
             a2_1 = a2_1/10**-2
             a3_1 = a3_1
@@ -620,7 +643,9 @@ def complicate(cation=None, ligand=None, beta=None, sass=None, out_name=None,
                     G=G, H=H, S=S, V=V, Cp=Cp, a1=a1, a2=a2, a3=a3, a4=a4, c1=c1, c2=c2,
                     omega=omega, ligand_abbrv_data_path=ligand_abbrv_data_path,
                     metal_organic_complex=metal_organic_complex,
-                    print_warnings=False)
+                    print_warnings=False,
+                    name_suffix_1=name_suffix_1, name_suffix_2=name_suffix_2,
+                    name_suffix_3=name_suffix_3, name_suffix_4=name_suffix_4)
             
             df_out_list.append(df_out_row)
 
@@ -1049,7 +1074,7 @@ def complicate(cation=None, ligand=None, beta=None, sass=None, out_name=None,
                 eqs_used.append("DELVR1 = {} cm3/mol = 0.11419*VC + 8.9432, Eq. 62 in Sverjensky et al., 1997".format("{0:.5g}".format(DELVR1)))
                 eqs_used.append("V1 = {} cm3/mol = DELVR1 + VC + VL, standard volume of the first complex".format("{0:.5g}".format(V1)))
 
-    if not math.isnan(BETA2):
+    if not math.isnan(BETA2) and not math.isnan(BETA1):
         ###### Calculations for the second complex
         eqs_used.append("Beginning calculations for the second complex...")
         Z = Z + ZL
@@ -1232,7 +1257,13 @@ def complicate(cation=None, ligand=None, beta=None, sass=None, out_name=None,
                 eqs_used.append("DELVR2 = {} cm3/mol = 0.11419*V1 + 8.9432, Eq. 62 in Sverjensky et al 1997".format("{0:.5g}".format(DELVR2)))
                 eqs_used.append("V2 = {} cm3/mol = DELVR2 + DELVR1 + VC + (2.0*VL), standard volume of the second complex".format("{0:.5g}".format(V2)))
 
-    if not math.isnan(BETA3):
+    if not math.isnan(BETA2) and math.isnan(BETA1):
+        msg = "Skipping second complex for {} {} because BETA_1 is missing. Higher-order complexes require all lower-order association constants.".format(cation, ligand)
+        warning_list.append(msg)
+        if print_warnings:
+            print(msg)
+
+    if not math.isnan(BETA3) and not math.isnan(BETA2) and not math.isnan(BETA1):
         ###### Calculations for the third complex
         eqs_used.append("Beginning calculations for the third complex...")
         Z = Z + ZL
@@ -1417,7 +1448,13 @@ def complicate(cation=None, ligand=None, beta=None, sass=None, out_name=None,
                 eqs_used.append("DELVR3 = {} cm3/mol = 0.11419*V2+ 8.9432, Eq. 62 in Sverjensky et al 1997".format("{0:.5g}".format(DELVR3)))
                 eqs_used.append("V3 = {} cm3/mol = DELVR3 + DELVR2 + DELVR1 + VC + (3.0*VL), standard volume of the third complex".format("{0:.5g}".format(V3)))
 
-    if not math.isnan(BETA4):
+    if not math.isnan(BETA3) and (math.isnan(BETA2) or math.isnan(BETA1)):
+        msg = "Skipping third complex for {} {} because BETA_1 and/or BETA_2 are missing. Higher-order complexes require all lower-order association constants.".format(cation, ligand)
+        warning_list.append(msg)
+        if print_warnings:
+            print(msg)
+
+    if not math.isnan(BETA4) and not math.isnan(BETA3) and not math.isnan(BETA2) and not math.isnan(BETA1):
         ##### Calculations for the fourth complex
         eqs_used.append("Beginning calculations for the fourth complex...")
         Z = Z + ZL
@@ -1616,7 +1653,13 @@ def complicate(cation=None, ligand=None, beta=None, sass=None, out_name=None,
             CP1 = Cp_1
         if not math.isnan(V_1):
             V1 = V_1
-        
+
+    if not math.isnan(BETA4) and (math.isnan(BETA3) or math.isnan(BETA2) or math.isnan(BETA1)):
+        msg = "Skipping fourth complex for {} {} because BETA_1, BETA_2, and/or BETA_3 are missing. Higher-order complexes require all lower-order association constants.".format(cation, ligand)
+        warning_list.append(msg)
+        if print_warnings:
+            print(msg)
+
     if metal_organic_complex:
         organic=True
     else:
@@ -1672,7 +1715,8 @@ def complicate(cation=None, ligand=None, beta=None, sass=None, out_name=None,
                          ligand_formula_ox_dict=ligand_formula_ox_dict,
                          skip_duplicates=skip_duplicates,
                          ligand_name_abbrv_pairs=ligand_name_abbrv_pairs,
-                         organic=organic)
+                         organic=organic,
+                         name_suffix=name_suffix_1)
 
         eqs_used = eqs_used + hkf_eqns_1
         duplicate_list = duplicate_list + duplicate_list_1
@@ -1689,7 +1733,7 @@ def complicate(cation=None, ligand=None, beta=None, sass=None, out_name=None,
     if not math.isnan(V_2):
         V2 = V_2
     
-    if not math.isnan(BETA2):
+    if not math.isnan(BETA2) and not math.isnan(BETA1):
         try:
             eqs_used.append("Estimating HKF parameters for the second complex...")
             G, H, S, a1, a2, a3, a4, c1, c2, wcon, hkf_eqns_2 = calc_params(Z2, G2, H2, S2, CP2, V2, a1_2, a2_2, a3_2, a4_2, c1_2, c2_2, omega_2, water_model=water_model, organic=organic)
@@ -1742,7 +1786,8 @@ def complicate(cation=None, ligand=None, beta=None, sass=None, out_name=None,
                          ligand_formula_ox_dict=ligand_formula_ox_dict,
                          skip_duplicates=skip_duplicates,
                          ligand_name_abbrv_pairs=ligand_name_abbrv_pairs,
-                         organic=organic)
+                         organic=organic,
+                         name_suffix=name_suffix_2)
 
         eqs_used = eqs_used + hkf_eqns_2
         duplicate_list = duplicate_list + duplicate_list_2
@@ -1759,7 +1804,7 @@ def complicate(cation=None, ligand=None, beta=None, sass=None, out_name=None,
     if not math.isnan(V_3):
         V3 = V_3
     
-    if not math.isnan(BETA3):
+    if not math.isnan(BETA3) and not math.isnan(BETA2) and not math.isnan(BETA1):
         try:
             eqs_used.append("Estimating HKF parameters for the third complex...")
             G, H, S, a1, a2, a3, a4, c1, c2, wcon, hkf_eqns_3 = calc_params(Z3, G3, H3, S3, CP3, V3, a1_3, a2_3, a3_3, a4_3, c1_3, c2_3, omega_3, water_model=water_model, organic=organic)
@@ -1812,7 +1857,8 @@ def complicate(cation=None, ligand=None, beta=None, sass=None, out_name=None,
                          ligand_formula_ox_dict=ligand_formula_ox_dict,
                          skip_duplicates=skip_duplicates,
                          ligand_name_abbrv_pairs=ligand_name_abbrv_pairs,
-                         organic=organic)
+                         organic=organic,
+                         name_suffix=name_suffix_3)
 
         eqs_used = eqs_used + hkf_eqns_3
         duplicate_list = duplicate_list + duplicate_list_3
@@ -1829,7 +1875,7 @@ def complicate(cation=None, ligand=None, beta=None, sass=None, out_name=None,
     if not math.isnan(V_4):
         V4 = V_4
 
-    if not math.isnan(BETA4):
+    if not math.isnan(BETA4) and not math.isnan(BETA3) and not math.isnan(BETA2) and not math.isnan(BETA1):
         try:
             eqs_used.append("Estimating HKF parameters for the fourth complex...")
             G, H, S, a1, a2, a3, a4, c1, c2, wcon, hkf_eqns_4 = calc_params(Z4, G4, H4, S4, CP4, V4, a1_4, a2_4, a3_4, a4_4, c1_4, c2_4, omega, water_model=water_model, organic=organic)
@@ -1882,7 +1928,8 @@ def complicate(cation=None, ligand=None, beta=None, sass=None, out_name=None,
                          ligand_formula_ox_dict=ligand_formula_ox_dict,
                          skip_duplicates=skip_duplicates,
                          ligand_name_abbrv_pairs=ligand_name_abbrv_pairs,
-                         organic=organic)
+                         organic=organic,
+                         name_suffix=name_suffix_4)
 
 
         eqs_used = eqs_used + hkf_eqns_4
