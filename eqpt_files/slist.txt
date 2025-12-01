@@ -1,0 +1,613 @@
+ EQPT Species List (SLIST) File:
+
+
+           Number of elements =    84
+           Number of basis species =   187
+
+ data0.mgo
+ Water model: SUPCRT92
+ TP points: 8
+ +--------------------------------------------------------------------
+
+
+ element = O       , atwt =   15.99940
+ element = H       , atwt =    1.00794
+ element = pl      , atwt =    1.00000
+ element = Li      , atwt =    6.94100
+ element = Na      , atwt =   22.98977
+ element = K       , atwt =   39.09830
+ element = Rb      , atwt =   85.46780
+ element = Cs      , atwt =  132.90540
+ element = Mg      , atwt =   24.30500
+ element = Ca      , atwt =   40.08000
+ element = Sr      , atwt =   87.62000
+ element = Ba      , atwt =  137.34000
+ element = C       , atwt =   12.01100
+ element = Pb      , atwt =  207.20000
+ element = N       , atwt =   14.00670
+ element = P       , atwt =   30.97376
+ element = S       , atwt =   32.06000
+ element = F       , atwt =   18.99840
+ element = Cl      , atwt =   35.45300
+ element = Br      , atwt =   79.90400
+ element = I       , atwt =  126.90450
+ element = Ni      , atwt =   58.71000
+ element = Cd      , atwt =  112.41000
+ element = La      , atwt =  138.91000
+ element = Nd      , atwt =  144.24000
+ element = Sm      , atwt =  150.35000
+ element = Gd      , atwt =  157.25000
+ element = Dy      , atwt =  162.50000
+ element = Ho      , atwt =  164.93000
+ element = Er      , atwt =  167.26000
+ element = Tm      , atwt =  168.93400
+ element = Yb      , atwt =  173.04000
+ element = Lu      , atwt =  174.97000
+ element = Hg      , atwt =  200.59000
+ element = Cu      , atwt =   63.54600
+ element = He      , atwt =    4.00260
+ element = B       , atwt =   10.81000
+ element = Si      , atwt =   28.08550
+ element = Ne      , atwt =   20.17900
+ element = Kr      , atwt =   83.80000
+ element = Rn      , atwt =  222.00000
+ element = Cr      , atwt =   51.99600
+ element = Mo      , atwt =   95.94000
+ element = W       , atwt =  183.85000
+ element = Ga      , atwt =   69.72000
+ element = Pr      , atwt =  140.90700
+ element = Tb      , atwt =  158.92400
+ element = Mn      , atwt =   54.93800
+ element = Co      , atwt =   58.93320
+ element = Be      , atwt =    9.01218
+ element = In      , atwt =  114.82000
+ element = Tl      , atwt =  204.37000
+ element = Sn      , atwt =  118.69000
+ element = Sb      , atwt =  121.75000
+ element = Bi      , atwt =  208.98000
+ element = Se      , atwt =   78.96000
+ element = Sc      , atwt =   44.95600
+ element = V       , atwt =   50.94200
+ element = Fe      , atwt =   55.84700
+ element = Y       , atwt =   88.90500
+ element = Zr      , atwt =   91.22000
+ element = Nb      , atwt =   92.90600
+ element = Ce      , atwt =  140.12000
+ element = Pm      , atwt =  146.91500
+ element = Hf      , atwt =  178.49000
+ element = U       , atwt =  238.02890
+ element = Eu      , atwt =  151.96000
+ element = Ru      , atwt =  101.07000
+ element = Rh      , atwt =  102.90500
+ element = Al      , atwt =   26.98154
+ element = As      , atwt =   74.92160
+ element = Au      , atwt =  196.96700
+ element = Ag      , atwt =  107.86820
+ element = Zn      , atwt =   65.38000
+ element = Pd      , atwt =  106.40000
+ element = Pt      , atwt =  195.09000
+ element = Ar      , atwt =   39.94800
+ element = Xe      , atwt =  131.29000
+ element = Am      , atwt =  223.00000
+ element = Th      , atwt =  232.03810
+ element = Ra      , atwt =  226.02500
+ element = Fr      , atwt =  223.00000
+ element = Re      , atwt =  186.20000
+ element = Tc      , atwt =   98.90600
+
+
+ aqueous
+
+     1  H2O                       H+
+     3  plhold                    Li+
+     5  Na+                       K+
+     7  Rb+                       Cs+
+     9  Mg+2                      Ca+2
+    11  Sr+2                      Ba+2
+    13  HCO3-                     Pb+2
+    15  NO3-                      HPO4-2
+    17  SO4-2                     F-
+    19  Cl-                       Br-
+    21  I-                        Ni+2
+    23  Cd+2                      La+3
+    25  Nd+3                      Sm+3
+    27  Gd+3                      Dy+3
+    29  Ho+3                      Er+3
+    31  Tm+3                      Yb+3
+    33  Lu+3                      Hg+2
+    35  Cu+2                      He
+    37  B(OH)3                    SiO2
+    39  Ne                        Kr
+    41  Rn                        CrO4-2
+    43  MoO4-2                    WO4-2
+    45  Ga+3                      Pr+3
+    47  Tb+3                      Mn+2
+    49  Co+2                      Be+2
+    51  In+3                      Tl+
+    53  Sn+2                      SbO2-
+    55  Bi+3                      SeO3-2
+    57  Sc+3                      VO+2
+    59  Fe+2                      Y+3
+    61  Zr+4                      NbO3-
+    63  Ce+3                      Pm+3
+    65  Hf+4                      U+4
+    67  Eu+2                      Ru+3
+    69  Rh+2                      Al+3
+    71  H2AsO4-                   Au+
+    73  Ag+                       Zn+2
+    75  Pd+2                      Pt+2
+    77  Ar                        Xe
+    79  Am+3                      Th+4
+    81  Ra+2                      Fr+
+    83  ReO4-                     TcO4-
+    85  O2(g)                     O2
+    87  NO2-                      NH4+
+    89  OH-                       HS-
+    91  S2O3-2                    ClO3-
+    93  BrO3-                     IO3-
+    95  Eu+3                      SiF6-2
+    97  S2-2                      Br3-
+    99  I3-                       Ag+2
+   101  H2                        N2
+   103  ClO4-                     MnO4-
+   105  Cr+3                      UO2+2
+   107  Tl+3                      CN-
+   109  N2O2-2                    N2H5+
+   111  H3PO3                     H3PO2
+   113  H2O2                      SO3-2
+   115  HSO5-                     HSe-
+   117  SeO4-2                    ClO-
+   119  ClO2-                     HBrO
+   121  BrO4-                     IO-
+   123  IO4-                      V+2
+   125  V+3                       VO2+
+   127  H2VO4-                    Cr+2
+   129  Mn+3                      MnO4-2
+   131  Fe+3                      Co+3
+   133  RuO4-2                    Au+3
+   135  Hg2+2                     U+3
+   137  UO2+                      La+2
+   139  Ce+2                      Pr+2
+   141  Nd+2                      Pm+2
+   143  Sm+2                      Tb+2
+   145  Dy+2                      Ho+2
+   147  Er+2                      Tm+2
+   149  Yb+2                      Ce+4
+   151  Pr+4                      Nd+4
+   153  Pm+4                      Sm+4
+   155  Eu+4                      Tb+4
+   157  Dy+4                      Er+4
+   159  Tm+4                      Yb+4
+   161  Lu+4                      Ru+2
+   163  Rh+3                      AsO4-3
+   165  H2AsO3-                   Cu+
+   167  CH4                       CO
+   169  AsO2-                     Ho+4
+   171  Gd+4                      Gd+2
+   173  S2O8-2                    S3-2
+   175  S4-2                      S5-2
+   177  H2S                       OCN-
+   179  SCN-                      SeCN-
+   181  S2O4-2                    S2O5-2
+   183  S2O6-2                    S3O6-2
+   185  S4O6-2                    S5O6-2
+   187  HS2O3-                    CO3-2
+   189  H2PO4-                    HSO3-
+   191  HSO4-                     BO2-
+   193  BF4-                      HF2-
+   195  NH3                       H3PO4
+   197  SO2                       HF
+   199  LaCl+2                    LaCl2+
+   201  LaCl3                     LaCl4-
+   203  LaF+2                     LaF2+
+   205  LaF3                      LaF4-
+   207  LaOH+2                    LaO+
+   209  LaO2H                     LaO2-
+   211  LaNO3+2                   LaHCO3+2
+   213  LaH2PO4+2                 LaCO3+
+   215  LaSO4+                    CeBr+2
+   217  CeCl+2                    CeCl2+
+   219  CeCl3                     CeCl4-
+   221  CeF+2                     CeF2+
+   223  CeF3                      CeF4-
+   225  CeOH+2                    CeO+
+   227  CeO2H                     CeO2-
+   229  CeNO3+2                   CeHCO3+2
+   231  CeH2PO4+2                 CeCO3+
+   233  CeSO4+                    PrCl+2
+   235  PrCl2+                    PrCl3
+   237  PrCl4-                    PrF+2
+   239  PrF2+                     PrF3
+   241  PrF4-                     PrOH+2
+   243  PrO+                      PrO2H
+   245  PrO2-                     PrNO3+2
+   247  PrHCO3+2                  PrH2PO4+2
+   249  PrCO3+                    PrSO4+
+   251  NdCl+2                    NdCl2+
+   253  NdCl3                     NdCl4-
+   255  NdF+2                     NdF2+
+   257  NdF3                      NdF4-
+   259  NdOH+2                    NdO+
+   261  NdO2H                     NdO2-
+   263  NdNO3+2                   NdHCO3+2
+   265  NdH2PO4+2                 NdCO3+
+   267  NdSO4+                    SmCl+2
+   269  SmCl2+                    SmCl3
+   271  SmCl4-                    SmF+2
+   273  SmF2+                     SmF3
+   275  SmF4-                     SmOH+2
+   277  SmO+                      SmO2H
+   279  SmO2-                     SmNO3+2
+   281  SmHCO3+2                  SmH2PO4+2
+   283  SmCO3+                    SmSO4+
+   285  EuCl+2                    EuCl2+
+   287  EuCl3                     EuCl4-
+   289  EuF+2                     EuF2+
+   291  EuF3                      EuF4-
+   293  EuOH+2                    EuO+
+   295  EuO2H                     EuO2-
+   297  EuNO3+2                   EuHCO3+2
+   299  EuH2PO4+2                 EuCO3+
+   301  EuSO4+                    EuF+
+   303  EuF2                      EuF3-
+   305  EuF4-2                    EuCl+
+   307  EuCl2                     EuCl3-
+   309  EuCl4-2                   GdCl+2
+   311  GdCl2+                    GdCl3
+   313  GdCl4-                    GdF+2
+   315  GdF2+                     GdF3
+   317  GdF4-                     GdOH+2
+   319  GdO+                      GdO2H
+   321  GdO2-                     GdNO3+2
+   323  GdHCO3+2                  GdH2PO4+2
+   325  GdCO3+                    GdSO4+
+   327  TbCl+2                    TbCl2+
+   329  TbCl3                     TbCl4-
+   331  TbF+2                     TbF2+
+   333  TbF3                      TbF4-
+   335  TbOH+2                    TbO+
+   337  TbO2H                     TbO2-
+   339  TbNO3+2                   TbHCO3+2
+   341  TbH2PO4+2                 TbCO3+
+   343  TbSO4+                    DyCl+2
+   345  DyCl2+                    DyCl3
+   347  DyCl4-                    DyF+2
+   349  DyF2+                     DyF3
+   351  DyF4-                     DyOH+2
+   353  DyO+                      DyO2H
+   355  DyO2-                     DyNO3+2
+   357  DyHCO3+2                  DyH2PO4+2
+   359  DyCO3+                    DySO4+
+   361  HoCl+2                    HoCl2+
+   363  HoCl3                     HoCl4-
+   365  HoF+2                     HoF2+
+   367  HoF3                      HoF4-
+   369  HoOH+2                    HoO+
+   371  HoO2H                     HoO2-
+   373  HoNO3+2                   HoHCO3+2
+   375  HoH2PO4+2                 HoCO3+
+   377  HoSO4+                    ErCl+2
+   379  ErCl2+                    ErCl3
+   381  ErCl4-                    ErF+2
+   383  ErF2+                     ErF3
+   385  ErF4-                     ErOH+2
+   387  ErO+                      ErO2H
+   389  ErO2-                     ErNO3+2
+   391  ErHCO3+2                  ErH2PO4+2
+   393  ErCO3+                    ErSO4+
+   395  TmCl+2                    TmCl2+
+   397  TmCl3                     TmCl4-
+   399  TmF+2                     TmF2+
+   401  TmF3                      TmF4-
+   403  TmOH+2                    TmO+
+   405  TmO2H                     TmO2-
+   407  TmNO3+2                   TmHCO3+2
+   409  TmH2PO4+2                 TmCO3+
+   411  TmSO4+                    YbCl+2
+   413  YbCl2+                    YbCl3
+   415  YbCl4-                    YbF+2
+   417  YbF2+                     YbF3
+   419  YbF4-                     YbOH+2
+   421  YbO+                      YbO2H
+   423  YbO2-                     YbNO3+2
+   425  YbHCO3+2                  YbH2PO4+2
+   427  YbCO3+                    YbSO4+
+   429  LuCl+2                    LuCl2+
+   431  LuCl3                     LuCl4-
+   433  LuF+2                     LuF2+
+   435  LuF3                      LuF4-
+   437  LuOH+2                    LuO+
+   439  LuO2H                     LuO2-
+   441  LuNO3+2                   LuHCO3+2
+   443  LuH2PO4+2                 LuCO3+
+   445  LuSO4+                    MgSO4
+   447  NaSO4-                    UOH+2
+   449  UO+                       HUO2
+   451  UO2-                      UOH+3
+   453  UO+2                      HUO2+
+   455  UO2                       HUO3-
+   457  UO2OH                     UO3-
+   459  UO2OH+                    UO3
+   461  HUO4-                     UO4-2
+   463  NaCl                      PbCl+
+   465  PbCl2                     PbCl3-
+   467  NiCl+                     FeCl+
+   469  MgCl+                     MgF+
+   471  CaF+                      KSO4-
+   473  CaSO4                     HSiO3-
+   475  LiCl                      KCl
+   477  RbCl                      CsCl
+   479  RbF                       NaBr
+   481  KBr                       RbBr
+   483  CsBr                      NaI
+   485  KI                        RbI
+   487  CsI                       Ag(CO3)-
+   489  Ag(CO3)2-3                MgCO3
+   491  CaCO3                     SrCO3
+   493  BaCO3                     NaHSiO3
+   495  KHSO4                     SrF+
+   497  BaF+                      CaCl+
+   499  CaCl2                     SrCl+
+   501  BaCl+                     FeCl2
+   503  MnCl+                     PbCl4-2
+   505  AgCl4-3                   AgNO3
+   507  MnSO4                     FeF+
+   509  FeF+2                     MgHSiO3+
+   511  CaHSiO3+                  HCrO4-
+   513  Cr2O7-2                   HWO4-
+   515  PO4-3                     HNO2
+   517  HNO3                      HN2O2-
+   519  H2N2O2                    N2H6+2
+   521  P2O7-4                    HP2O7-3
+   523  H2P2O7-2                  H3P2O7-
+   525  H4P2O7                    HPO3-2
+   527  H2PO3-                    H2PO2-
+   529  HSbO2                     HO2-
+   531  H2S2O3                    HS2O4-
+   533  H2S2O4                    HSeO3-
+   535  H2SeO3                    HSeO4-
+   537  HClO                      BrO-
+   539  HIO                       HIO3
+   541  VO4-3                     HVO4-2
+   543  H3VO4                     HNbO3
+   545  HMoO4-                    LiOH
+   547  NaOH                      KOH
+   549  RbOH                      CsOH
+   551  BeOH+                     BeO
+   553  HBeO2-                    BeO2-2
+   555  MgOH+                     CaOH+
+   557  SrOH+                     BaOH+
+   559  SnOH+                     HSnO2-
+   561  PbOH+                     PbO
+   563  HPbO2-                    BiOH+2
+   565  BiO+                      HBiO2
+   567  BiO2-                     GaOH+2
+   569  GaO+                      HGaO2
+   571  GaO2-                     InOH+2
+   573  InO+                      HInO2
+   575  InO2-                     TlOH
+   577  TlOH+2                    TlO+
+   579  HTlO2                     TlO2-
+   581  ScOH+2                    ScO+
+   583  HScO2                     ScO2-
+   585  VOH+                      VOH+2
+   587  VO+                       CrOH+2
+   589  CrO+                      HCrO2
+   591  CrO2-                     MnOH+
+   593  MnO                       HMnO2-
+   595  MnO2-2                    FeOH+
+   597  FeO                       HFeO2-
+   599  FeOH+2                    FeO+
+   601  HFeO2                     FeO2-
+   603  CoOH+                     CoO
+   605  HCoO2-                    CoO2-2
+   607  CoOH+2                    NiOH+
+   609  NiO                       HNiO2-
+   611  NiO2-2                    CuOH+
+   613  CuO                       HCuO2-
+   615  CuO2-2                    YOH+2
+   617  YO+                       HYO2
+   619  YO2-                      ZrOH+3
+   621  ZrO+2                     HZrO2+
+   623  ZrO2                      HZrO3-
+   625  AgO-                      CdOH+
+   627  CdO                       HCdO2-
+   629  CdO2-2                    HfOH+3
+   631  HfO+2                     HHfO2+
+   633  HfO2                      HHfO3-
+   635  HgOH+                     HgO
+   637  HHgO2-                    RuOH+
+   639  RuO                       RuOH+2
+   641  RuO+                      RhOH+
+   643  RhO                       RhOH+2
+   645  RhO+                      AlOH+2
+   647  HAsO4-2                   AgOH
+   649  AgCl                      AgCl2-
+   651  AgCl3-2                   ZnOH+
+   653  ZnO                       HZnO2-
+   655  ZnO2-2                    ZnCl+
+   657  ZnCl2                     ZnCl3-
+   659  HCl                       PdO
+   661  HCN                       BaHCO3+
+   663  CaHCO3+                   MgHCO3+
+   665  SrHCO3+                   CO2
+   667  PtSO4                     PtO
+   669  HAsO2                     AlO2-
+   671  AlO+                      HAlO2
+   673  AmOH+2                    AmO+
+   675  HAmO2                     AmF+2
+   677  AmF2+                     AmF3
+   679  AmF4-                     AmCl+2
+   681  AmCl2+                    AmCl3
+   683  AmCl4-                    AmNO3+2
+   685  Am(NO3)2+                 AmNO2+2
+   687  AmH2PO4+2                 AmSCN+2
+   689  Am(SCN)2+                 Am(SCN)3
+   691  Am(HCO3)+2                Am(ClO4)+2
+   693  AmCO3+                    Am(CO3)2-
+   695  AmSO4+                    Am(SO4)2-
+   697  PtOH+                     CuCl
+   699  CuCl2-                    CuCl3-2
+   701  CuCl+                     CuCl2
+   703  CuCl3-                    CuCl4-2
+   705  CuF+                      CoCl+
+   707  CoF+                      NiF+
+   709  MnF+                      ZnF+
+   711  CdCl+                     CdCl2
+   713  CdCl3-                    CdCl4-2
+   715  CdF+                      CdF2
+   717  SnO                       PbF+
+   719  PbF2                      Pb(HS)2
+   721  Pb(HS)3-                  BeCl+
+   723  BeCl2                     BeF+
+   725  BeF2                      BeF3-
+   727  BeF4-2                    Pd(SO4)2-2
+   729  Pd(SO4)3-4                Pt(SO4)2-2
+   731  Pt(SO4)3-4                Rh(SO4)2-
+   733  Rh(SO4)2-2                Rh(SO4)3-3
+   735  Rh(SO4)3-4                Ru(SO4)2-
+   737  Ru(SO4)2-2                Ru(SO4)3-3
+   739  Ru(SO4)3-4                Ag(HS)2-
+   741  AgF                       Au(HS)2-
+   743  AuCl                      AuCl2-
+   745  AuCl3-2                   FeCl+2
+   747  H3AsO4                    HgCl+
+   749  HgCl2                     HgCl3-
+   751  HgCl4-2                   HgF+
+   753  InCl+2                    InF+2
+   755  PdCl+                     PdCl2
+   757  PdCl3-                    PdCl4-2
+   759  PdSO4                     PtCl+
+   761  PtCl2                     PtCl3-
+   763  PtCl4-2                   RhCl+
+   765  RhCl+2                    RhCl2
+   767  RhCl2+                    RhCl3
+   769  RhCl3-                    RhCl4-
+   771  RhCl4-2                   RhSO4
+   773  RhSO4+                    RuCl+
+   775  RuCl+2                    RuCl2
+   777  RuCl2+                    RuCl3
+   779  RuCl3-                    RuCl4-
+   781  RuCl4-2                   RuCl5-2
+   783  RuCl6-3                   RuSO4
+   785  RuSO4+                    TlCl
+   787  TlCl+2                    TlF
+   789  VOOH+                     CeClO4+2
+   791  CeIO3+2                   HClO2
+   793  PdOH+                     Mg(OH)+_low
+   795  Mg(OH)+_mid               Mg(OH)+_high
+
+
+ minerals
+
+     1  PLACEHOLDER1              PLACEHOLDER2
+     3  acanthite                 alabandite
+     5  anglesite                 anhydrite
+     7  barite                    bornite
+     9  bunsenite                 celestite
+    11  cerussite                 chalcocite
+    13  chalcopyrite              chlorargyrite
+    15  cinnabar                  copper
+    17  covellite                 cuprite
+    19  ferrous-oxide             galena
+    21  gold                      graphite
+    23  halite                    huntite
+    25  hydromagnesite            iron
+    27  malachite                 manganosite
+    29  metacinnabar              nesquehonite
+    31  nickel                    pyrite
+    33  pyrrhotite                rhodochrosite
+    35  siderite                  silver
+    37  smithsonite               sphalerite
+    39  strontianite              sylvite
+    41  tenorite                  wurtzite
+    43  berndtite                 cassiterite
+    45  romarchite                tin
+    47  uraninite                 goethite
+    49  boehmite                  gibbsite
+    51  akermanite                albite
+    53  albite,high               albite,low
+    55  andalusite                anorthite
+    57  anthophyllite             antigorite
+    59  brucite                   calcite
+    61  chrysotile                coesite
+    63  corundum                  cristobalite,alpha
+    65  cristobalite,beta         diaspore
+    67  diopside                  dolomite
+    69  enstatite                 fayalite
+    71  ferrosilite               forsterite
+    73  gehlenite                 grossular
+    75  hematite                  jadeite
+    77  kaolinite                 kyanite
+    79  lawsonite                 lime
+    81  magnesite                 magnetite
+    83  margarite                 merwinite
+    85  monticellite              muscovite
+    87  paragonite                periclase
+    89  phlogopite                K-feldspar
+    91  prehnite                  pyrophyllite
+    93  quartz                    sillimanite
+    95  spinel                    talc
+    97  tremolite                 wollastonite
+    99  annite                    aragonite
+   101  hedenbergite              andradite
+   103  zoisite                   clinozoisite
+   105  epidote                   alunite
+   107  analcime                  analcime,dehydrated
+   109  artinite                  azurite
+   111  chalcedony                clinochlore,14a
+   113  clinochlore,7a            cordierite,hydrous
+   115  cristobalite              daphnite,14a
+   117  epidote,ordered           ferrotremolite
+   119  fluorite                  greenalite
+   121  kalsilite                 laumontite
+   123  microcline,maximum        nepheline
+   125  pargasite                 sanidine,high
+   127  sepiolite                 wairakite
+   129  sulfur                    Fe-brucite
+   131  minnesotaite              Mg-cronstedtite
+   133  hisingerite               almandine
+   135  bromellite                dickite
+   137  ferropargasite            fluorphlogopite
+   139  glaucophane               grunerite
+   141  halloysite                larnite
+   143  laurite                   litharge
+   145  palladium                 platinum
+   147  pyrope                    quicksilver
+   149  rhodium                   ruthenium
+   151  portlandite               gypsum
+   153  pyrolusite                bixbyite
+   155  hausmannite               huebnerite
+   157  linnaeite                 cattierite
+   159  willemite                 guite
+   161  cobalt-monoxide           Mn(OH)2
+   163  amorphous-silica
+
+
+ liquids
+
+     1  PLACEHOLDER3
+
+ * Note - (EQPT/pcrsg) The pure liquids block has
+       not been written on the DATA1 and DATA1F files,
+       because the EQ3NR and EQ6 codes presently do not
+       treat non-aqeuous liquids.
+
+
+ gases
+
+     1  H2O(g)                    O2(g)
+     3  Ar(g)                     CH4(g)
+     5  CO2(g)                    H2(g)
+     7  H2S(g)                    He(g)
+     9  Kr(g)                     N2(g)
+    11  Ne(g)                     NH3(g)
+    13  Rn(g)                     S2(g)
+    15  SO2(g)                    Xe(g)
+    17  CO(g)
+
+
+ solid solutions
+
+     1  PLAC EHO LDER 4
+            PLACEHOLDER1              PLACEHOLDER2
