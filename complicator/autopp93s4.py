@@ -196,43 +196,32 @@ def __write_output(filename, cation, ligand, nth_complex, G, H, S, CP, V,
         file_exists = os.path.isfile(filename+'.csv')
         
         if file_exists:
-            with open(filename+'.csv', 'a') as f:
+            f_df = pd.read_csv(filename+'.csv')
+            all_names = set(thermo_data["name"]).union(set(f_df["name"]))
 
-                f_df = pd.read_csv(filename+'.csv')
-                
-                # check that a monoligand complex without parentheses isn't already
-                # in the thermodynamic database. Warn or skip.
-                keep = True
-                complex_name_no_parentheses = complex_name.replace("(", "").replace(")", "")
-    
-                if complex_name_no_parentheses in list(thermo_data["name"]):
-                    if skip_duplicates:
-                        keep = False
-                    duplicate_list.append([complex_name, complex_name_no_parentheses])
-                
-                complex_name_organic_abbv = ""
-                for name,abbv in ligand_name_abbrv_pairs:
+            # check that a monoligand complex without parentheses isn't already
+            # in the thermodynamic database or the growing output file. Warn or skip.
+            keep = True
+            complex_name_no_parentheses = complex_name.replace("(", "").replace(")", "")
 
-                    if name in complex_name:
-                        # replace "Mg(acetate)+" with "Mg(Ac)+", etc. for the sake of
-                        # checking for duplicate entries
-                        complex_name_organic_abbv = complex_name.replace(name, abbv)
-                
-                    if complex_name_organic_abbv in list(thermo_data["name"]):
+            if complex_name in all_names or complex_name_no_parentheses in all_names:
+                if skip_duplicates:
+                    keep = False
+                duplicate_list.append([complex_name, complex_name_no_parentheses])
+
+            complex_name_organic_abbv = ""
+            for name,abbv in ligand_name_abbrv_pairs:
+                if name in complex_name:
+                    complex_name_organic_abbv = complex_name.replace(name, abbv)
+
+                    if complex_name_organic_abbv in all_names:
                         if skip_duplicates:
                             keep = False
                         duplicate_list.append([complex_name, complex_name_organic_abbv])
-
                         break
-                
-                # if keep and replace and complex_name in list(f_df["name"]):
-                #     cols = list(f_df.columns) 
-                #     f_df.iloc[f_df["name"]==complex_name, :] = df
-    
-                #     f_df.to_csv(filename+'.csv', header=True, index=False)
-    
-                if keep: # was elif prior to the block above being commented out
-                    df.to_csv(f, header=False, index=False)
+
+            if keep:
+                df.to_csv(filename+'.csv', mode='a', header=False, index=False, lineterminator='\n')
     
         else:
             df.to_csv(filename+'.csv', index=False)

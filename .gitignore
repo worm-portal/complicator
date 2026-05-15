@@ -106,3 +106,6 @@ DEW_Data0
 *.tmp
 *.bak
 *.backup
+
+# Test directory
+test/

@@ -1,5 +1,6 @@
 import pandas as pd
 import math
+from scipy.optimize import minimize
 from .autopp93s4 import complicate
 import plotly.express as px
 import plotly.graph_objects as go
@@ -10,8 +11,8 @@ interact_manual.opts['manual_name'] = 'Calculate'
 import pychnosz
 _ = pychnosz.thermo("WORM", messages=False)
 
-@interact_manual(n_complex=(1, 4, 1), metal="Co+2", ligand="Cl-", logK_data="demo.csv", data_path="WORM", log_beta=(-5, 5, 0.001), S=(-1000, 1000, 0.1), Cp=(-1000, 1000, 0.1), V=(-1000, 1000, 0.1))
-def complex_fit(n_complex=4, metal="Co+2", ligand="Cl-", logK_data="demo.csv", data_path="WORM", log_beta=0, S=0, Cp=0, V=0):
+@interact_manual(n_complex=(1, 4, 1), metal="Co+2", ligand="Cl-", logK_data="demo.csv", data_path="WORM", log_beta=(-5, 5, 0.001), S=(-1000, 1000, 0.1), Cp=(-1000, 1000, 0.1), V=(-1000, 1000, 0.1), auto_fit=False)
+def complex_fit(n_complex=4, metal="Co+2", ligand="Cl-", logK_data="demo.csv", data_path="WORM", log_beta=0, S=0, Cp=0, V=0, auto_fit=False):
 
     if data_path == "WORM":
         data_path = None
@@ -20,6 +21,95 @@ def complex_fit(n_complex=4, metal="Co+2", ligand="Cl-", logK_data="demo.csv", d
     
     df_logK = pd.read_csv(logK_data)
     df_logK["legendgroup"] = df_logK.apply(lambda x: str(x["P"]) + " bars (" + str(x["ref"]) + ")" if str(x["P"]) != "Psat" else "Psat (" + str(x["ref"]) + ")", axis=1)
+
+    if auto_fit:
+        def _get_predicted_logK(lb, s, cp, v):
+            """Run complicate + subcrt and return list of predicted logK values, or None on failure."""
+            d = {
+                "Metal": [metal],
+                "Ligand": [ligand],
+                "BETA_1": [0], "BETA_2": [0], "BETA_3": [0], "BETA_4": [0],
+                "S_"+str(n_complex): [s],
+                "Cp_"+str(n_complex): [cp],
+                "V_"+str(n_complex): [v],
+            }
+            d["BETA_"+str(n_complex)] = [lb]
+            df_in = pd.DataFrame(d)
+            df_o, _, _, _ = complicate(df_in=df_in, data_path=data_path, print_warnings=False)
+            if df_o is None or df_o.empty or len(df_o) < n_complex:
+                return None
+            cname = df_o["name"].iloc[n_complex-1]
+            _ = pychnosz.add_OBIGT(df_o, force=True, messages=False)
+            predictions = []
+            for i in range(len(df_logK)):
+                P_val = df_logK["P"].iloc[i]
+                if P_val != "Psat":
+                    P_val = float(P_val)
+                try:
+                    pred = pychnosz.subcrt(
+                        [metal, ligand, cname], [-1, -n_complex, 1],
+                        T=df_logK["T,C"].iloc[i], P=P_val,
+                        show=False, messages=False).out
+                    if "logK" in pred.columns:
+                        predictions.append(pred["logK"].values[0])
+                    else:
+                        predictions.append(float('nan'))
+                except:
+                    predictions.append(float('nan'))
+            return predictions
+
+        # Fix log_beta from 25°C Psat data point if available
+        ref_mask = (df_logK["T,C"] == 25) & (df_logK["P"].astype(str) == "Psat")
+        if ref_mask.any():
+            log_beta = df_logK.loc[ref_mask, "logK"].iloc[0]
+        elif log_beta == 0:
+            idx_lowT = df_logK["T,C"].values.argmin()
+            log_beta = df_logK["logK"].iloc[idx_lowT]
+
+        # Test that the model works with the fixed log_beta
+        test_pred = _get_predicted_logK(log_beta, S, Cp, V)
+        if test_pred is None:
+            print("Warning: model cannot be evaluated. Check metal/ligand/data_path settings.")
+        else:
+            def _objective(params):
+                s, cp, v = params
+                preds = _get_predicted_logK(log_beta, s, cp, v)
+                if preds is None:
+                    return 1e10
+                residuals = 0.0
+                n_valid = 0
+                for i in range(len(df_logK)):
+                    if preds[i] is None or math.isnan(preds[i]):
+                        continue
+                    err_val = df_logK["err"].iloc[i]
+                    if pd.isna(err_val) or err_val <= 0:
+                        err_val = 1.0
+                    weight = 1.0 / err_val
+                    residuals += (weight * (df_logK["logK"].iloc[i] - preds[i])) ** 2
+                    n_valid += 1
+                if n_valid == 0:
+                    return 1e10
+                return residuals / n_valid
+
+            x0 = [S, Cp, V]
+            print("Fixing log_beta={:.4f}. Optimizing S, Cp, V...".format(log_beta), end="", flush=True)
+
+            _iter_count = [0]
+            def _callback(xk):
+                _iter_count[0] += 1
+                if _iter_count[0] % 5 == 0:
+                    print(".", end="", flush=True)
+
+            result = minimize(_objective, x0, method='Powell',
+                              callback=_callback,
+                              options={'xtol': 0.001, 'ftol': 0.01, 'maxiter': 2000})
+            print(" done.")
+            S, Cp, V = result.x
+            S = max(-1000, min(1000, S))
+            Cp = max(-1000, min(1000, Cp))
+            V = max(-1000, min(1000, V))
+            print("Auto-fit result: log_beta={:.4f}, S={:.2f}, Cp={:.2f}, V={:.2f}".format(
+                log_beta, S, Cp, V))
 
     dict_input = {
             "Metal":[metal],
@@ -77,9 +167,9 @@ def complex_fit(n_complex=4, metal="Co+2", ligand="Cl-", logK_data="demo.csv", d
             Pfloat = P
         
         logK_pred = pychnosz.subcrt([metal, ligand, complex_name], [-1, -n_complex, 1],
-                                    T=df_logK["T,C"][i], property="logK", P=Pfloat,
+                                    T=df_logK["T,C"][i], P=Pfloat,
                                     show=False, messages=False).out
-        logK_pred = logK_pred.values[0][0]
+        logK_pred = logK_pred["logK"].values[0]
 
         if df_logK["legendgroup"][i] in legendgroups_added:
             showlegend = False
@@ -88,12 +178,20 @@ def complex_fit(n_complex=4, metal="Co+2", ligand="Cl-", logK_data="demo.csv", d
             legendgroups_added.append(df_logK["legendgroup"][i])
         
         line_col = plotly.colors.qualitative.D3[len(legendgroups_added)-1]
-        if math.isclose(df_logK["logK"][i], logK_pred, rel_tol=0.1) or math.isclose(df_logK["logK"][i], logK_pred, abs_tol=df_logK["err"][i]):
+        err_val = df_logK["err"][i]
+        has_err = not pd.isna(err_val)
+        if math.isclose(df_logK["logK"][i], logK_pred, rel_tol=0.1) or (has_err and math.isclose(df_logK["logK"][i], logK_pred, abs_tol=err_val)):
             # filled circle
             fill_col = line_col
         else:
             # open circle
             fill_col = 'rgba(255, 0, 0, 0.0)'
+
+        error_y_dict = dict(
+                        type='data',
+                        array=[err_val if has_err else 0],
+                        color=line_col,
+                        visible=has_err)
 
         fig.add_trace(go.Scatter(
             x=[df_logK['T,C'][i]],
@@ -103,16 +201,12 @@ def complex_fit(n_complex=4, metal="Co+2", ligand="Cl-", logK_data="demo.csv", d
             showlegend=showlegend,
             mode="markers",
             marker=dict(
-                        size=10, 
+                        size=10,
                         symbol='circle',
                         line_width=2,
                         line_color=line_col,
                         color=fill_col),
-                error_y=dict(
-                        type='data',
-                        array=[df_logK["err"][i]],
-                        color=line_col,
-                        visible=True),
+                error_y=error_y_dict,
                 )
         )
     
